@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://docs.djangoproject.com/en/1.8/topics/http/decorators/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>View decorators | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./View decorators _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./View decorators _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./View decorators _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./View decorators _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/topics/http/decorators/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./View decorators _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./View decorators _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./View decorators _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./View decorators _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./View decorators _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/topics/http/decorators/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/topics/http/decorators/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/topics/http/decorators/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/topics/http/decorators/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/topics/http/decorators/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/topics/http/decorators/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-module-django.views.decorators.http">
+<span id="s-view-decorators"></span><span id="module-django.views.decorators.http"></span><span id="view-decorators"></span><h1>View decorators<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#module-django.views.decorators.http" title="Permalink to this headline">¶</a></h1>
+<p>Django provides several decorators that can be applied to views to support
+various HTTP features.</p>
+<div class="section" id="s-allowed-http-methods">
+<span id="allowed-http-methods"></span><h2>Allowed HTTP methods<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#allowed-http-methods" title="Permalink to this headline">¶</a></h2>
+<p>The decorators in <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#module-django.views.decorators.http" title="django.views.decorators.http"><tt class="xref py py-mod docutils literal"><span class="pre">django.views.decorators.http</span></tt></a> can be used to restrict
+access to views based on the request method. These decorators will return
+a <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponseNotAllowed" title="django.http.HttpResponseNotAllowed"><tt class="xref py py-class docutils literal"><span class="pre">django.http.HttpResponseNotAllowed</span></tt></a> if the conditions are not met.</p>
+<dl class="function">
+<dt id="django.views.decorators.http.require_http_methods">
+<tt class="descname">require_http_methods</tt>(<em>request_method_list</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/views/decorators/http/#require_http_methods"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.http.require_http_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to require that a view only accepts particular request
+methods. Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.views.decorators.http</span> <span class="kn">import</span> <span class="n">require_http_methods</span>
+
+<span class="nd">@require_http_methods</span><span class="p">([</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"POST"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="c"># I can assume now that only GET or POST requests make it this far</span>
+    <span class="c"># ...</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Note that request methods should be in uppercase.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django.views.decorators.http.require_GET">
+<tt class="descname">require_GET</tt>()<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.http.require_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to require that a view only accepts the GET method.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django.views.decorators.http.require_POST">
+<tt class="descname">require_POST</tt>()<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.http.require_POST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to require that a view only accepts the POST method.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django.views.decorators.http.require_safe">
+<tt class="descname">require_safe</tt>()<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.http.require_safe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to require that a view only accepts the GET and HEAD methods.
+These methods are commonly considered “safe” because they should not have
+the significance of taking an action other than retrieving the requested
+resource.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Django will automatically strip the content of responses to HEAD
+requests while leaving the headers unchanged, so you may handle HEAD
+requests exactly like GET requests in your views. Since some software,
+such as link checkers, rely on HEAD requests, you might prefer
+using <tt class="docutils literal"><span class="pre">require_safe</span></tt> instead of <tt class="docutils literal"><span class="pre">require_GET</span></tt>.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="s-conditional-view-processing">
+<span id="conditional-view-processing"></span><h2>Conditional view processing<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#conditional-view-processing" title="Permalink to this headline">¶</a></h2>
+<p>The following decorators in <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#module-django.views.decorators.http" title="django.views.decorators.http"><tt class="xref py py-mod docutils literal"><span class="pre">django.views.decorators.http</span></tt></a> can be used to
+control caching behavior on particular views.</p>
+<dl class="function">
+<dt id="django.views.decorators.http.condition">
+<tt class="descname">condition</tt>(<em>etag_func=None</em>, <em>last_modified_func=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/views/decorators/http/#condition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.http.condition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="django.views.decorators.http.etag">
+<tt class="descname">etag</tt>(<em>etag_func</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/views/decorators/http/#etag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.http.etag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="django.views.decorators.http.last_modified">
+<tt class="descname">last_modified</tt>(<em>last_modified_func</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/views/decorators/http/#last_modified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.http.last_modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>These decorators can be used to generate <tt class="docutils literal"><span class="pre">ETag</span></tt> and <tt class="docutils literal"><span class="pre">Last-Modified</span></tt>
+headers; see
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/conditional-view-processing/"><em>conditional view processing</em></a>.</p>
+</dd></dl>
+
+<span class="target" id="module-django.views.decorators.gzip"></span></div>
+<div class="section" id="s-gzip-compression">
+<span id="gzip-compression"></span><h2>GZip compression<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#gzip-compression" title="Permalink to this headline">¶</a></h2>
+<p>The decorators in <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#module-django.views.decorators.gzip" title="django.views.decorators.gzip"><tt class="xref py py-mod docutils literal"><span class="pre">django.views.decorators.gzip</span></tt></a> control content
+compression on a per-view basis.</p>
+<dl class="function">
+<dt id="django.views.decorators.gzip.gzip_page">
+<tt class="descname">gzip_page</tt>()<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.gzip.gzip_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>This decorator compresses content if the browser allows gzip compression.
+It sets the <tt class="docutils literal"><span class="pre">Vary</span></tt> header accordingly, so that caches will base their
+storage on the <tt class="docutils literal"><span class="pre">Accept-Encoding</span></tt> header.</p>
+</dd></dl>
+
+<span class="target" id="module-django.views.decorators.vary"></span></div>
+<div class="section" id="s-vary-headers">
+<span id="vary-headers"></span><h2>Vary headers<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#vary-headers" title="Permalink to this headline">¶</a></h2>
+<p>The decorators in <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#module-django.views.decorators.vary" title="django.views.decorators.vary"><tt class="xref py py-mod docutils literal"><span class="pre">django.views.decorators.vary</span></tt></a> can be used to control
+caching based on specific request headers.</p>
+<dl class="function">
+<dt id="django.views.decorators.vary.vary_on_cookie">
+<tt class="descname">vary_on_cookie</tt>(<em>func</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/views/decorators/vary/#vary_on_cookie"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.vary.vary_on_cookie" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="django.views.decorators.vary.vary_on_headers">
+<tt class="descname">vary_on_headers</tt>(<em>*headers</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/views/decorators/vary/#vary_on_headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#django.views.decorators.vary.vary_on_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <tt class="docutils literal"><span class="pre">Vary</span></tt> header defines which request headers a cache mechanism should take
+into account when building its cache key.</p>
+<p>See <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/cache/#using-vary-headers"><em>using vary headers</em></a>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/topics/http/views/"><i class="icon icon-chevron-left"></i> Writing views</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/topics/http/file-uploads/">File Uploads <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./View decorators _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Guillermo Alvarez donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#">View decorators</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#allowed-http-methods">Allowed HTTP methods</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#conditional-view-processing">Conditional view processing</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#gzip-compression">GZip compression</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/#vary-headers">Vary headers</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/topics/http/views/">Writing views</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/topics/http/file-uploads/">File Uploads</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/topics/">Using Django</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/topics/http/">Handling HTTP requests</a>
+      
+      <ul><li>View decorators</li></ul>
+      </li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./View decorators _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

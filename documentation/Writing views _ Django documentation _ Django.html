@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://docs.djangoproject.com/en/1.8/topics/http/views/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>Writing views | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./Writing views _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./Writing views _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./Writing views _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./Writing views _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/topics/http/views/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./Writing views _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./Writing views _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./Writing views _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./Writing views _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./Writing views _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/topics/http/views/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/topics/http/views/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/topics/http/views/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/topics/http/views/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/topics/http/views/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/topics/http/views/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-writing-views">
+<span id="writing-views"></span><h1>Writing views<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#writing-views" title="Permalink to this headline">¶</a></h1>
+<p>A view function, or <em>view</em> for short, is simply a Python function that takes a
+Web request and returns a Web response. This response can be the HTML contents
+of a Web page, or a redirect, or a 404 error, or an XML document, or an image .
+. . or anything, really. The view itself contains whatever arbitrary logic is
+necessary to return that response. This code can live anywhere you want, as long
+as it’s on your Python path. There’s no other requirement–no “magic,” so to
+speak. For the sake of putting the code <em>somewhere</em>, the convention is to
+put views in a file called <tt class="docutils literal"><span class="pre">views.py</span></tt>, placed in your project or
+application directory.</p>
+<div class="section" id="s-a-simple-view">
+<span id="a-simple-view"></span><h2>A simple view<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#a-simple-view" title="Permalink to this headline">¶</a></h2>
+<p>Here’s a view that returns the current date and time, as an HTML document:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="k">def</span> <span class="nf">current_datetime</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="s">"&lt;html&gt;&lt;body&gt;It is now </span><span class="si">%s</span><span class="s">.&lt;/body&gt;&lt;/html&gt;"</span> <span class="o">%</span> <span class="n">now</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s step through this code one line at a time:</p>
+<ul>
+<li><p class="first">First, we import the class <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a> from the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#module-django.http" title="django.http: Classes dealing with HTTP requests and responses."><tt class="xref py py-mod docutils literal"><span class="pre">django.http</span></tt></a> module, along with Python’s <tt class="docutils literal"><span class="pre">datetime</span></tt> library.</p>
+</li>
+<li><p class="first">Next, we define a function called <tt class="docutils literal"><span class="pre">current_datetime</span></tt>. This is the view
+function. Each view function takes an <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpRequest" title="django.http.HttpRequest"><tt class="xref py py-class docutils literal"><span class="pre">HttpRequest</span></tt></a>
+object as its first parameter, which is typically named <tt class="docutils literal"><span class="pre">request</span></tt>.</p>
+<p>Note that the name of the view function doesn’t matter; it doesn’t have to
+be named in a certain way in order for Django to recognize it. We’re
+calling it <tt class="docutils literal"><span class="pre">current_datetime</span></tt> here, because that name clearly indicates
+what it does.</p>
+</li>
+<li><p class="first">The view returns an <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a> object that
+contains the generated response. Each view function is responsible for
+returning an <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a> object. (There are
+exceptions, but we’ll get to those later.)</p>
+</li>
+</ul>
+<div class="admonition-django-s-time-zone admonition">
+<p class="first admonition-title">Django’s Time Zone</p>
+<p class="last">Django includes a <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TIME_ZONE"><tt class="xref std std-setting docutils literal"><span class="pre">TIME_ZONE</span></tt></a> setting that defaults to
+<tt class="docutils literal"><span class="pre">America/Chicago</span></tt>. This probably isn’t where you live, so you might want
+to change it in your settings file.</p>
+</div>
+</div>
+<div class="section" id="s-mapping-urls-to-views">
+<span id="mapping-urls-to-views"></span><h2>Mapping URLs to views<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#mapping-urls-to-views" title="Permalink to this headline">¶</a></h2>
+<p>So, to recap, this view function returns an HTML page that includes the current
+date and time. To display this view at a particular URL, you’ll need to create a
+<em>URLconf</em>; see <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/urls/"><em>URL dispatcher</em></a> for instructions.</p>
+</div>
+<div class="section" id="s-returning-errors">
+<span id="returning-errors"></span><h2>Returning errors<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#returning-errors" title="Permalink to this headline">¶</a></h2>
+<p>Returning HTTP error codes in Django is easy. There are subclasses of
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a> for a number of common HTTP status codes
+other than 200 (which means <em>“OK”</em>). You can find the full list of available
+subclasses in the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#ref-httpresponse-subclasses"><em>request/response</em></a>
+documentation.  Just return an instance of one of those subclasses instead of
+a normal <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a> in order to signify an error. For
+example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseNotFound</span>
+
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="c"># ...</span>
+    <span class="k">if</span> <span class="n">foo</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponseNotFound</span><span class="p">(</span><span class="s">'&lt;h1&gt;Page not found&lt;/h1&gt;'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">'&lt;h1&gt;Page was found&lt;/h1&gt;'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There isn’t a specialized subclass for every possible HTTP response code,
+since many of them aren’t going to be that common. However, as documented in
+the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a> documentation, you can also pass the
+HTTP status code into the constructor for <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a>
+to create a return class for any status code you like. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="c"># ...</span>
+
+    <span class="c"># Return a "created" (201) response code.</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">201</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Because 404 errors are by far the most common HTTP error, there’s an easier way
+to handle those errors.</p>
+<div class="section" id="s-the-http404-exception">
+<span id="the-http404-exception"></span><h3>The Http404 exception<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#the-http404-exception" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="django.http.Http404">
+<em class="property">class </em><tt class="descclassname">django.http.</tt><tt class="descname">Http404</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#django.http.Http404" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>When you return an error such as <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponseNotFound" title="django.http.HttpResponseNotFound"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponseNotFound</span></tt></a>,
+you’re responsible for defining the HTML of the resulting error page:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">return</span> <span class="n">HttpResponseNotFound</span><span class="p">(</span><span class="s">'&lt;h1&gt;Page not found&lt;/h1&gt;'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For convenience, and because it’s a good idea to have a consistent 404 error page
+across your site, Django provides an <tt class="docutils literal"><span class="pre">Http404</span></tt> exception. If you raise
+<tt class="docutils literal"><span class="pre">Http404</span></tt> at any point in a view function, Django will catch it and return the
+standard error page for your application, along with an HTTP error code 404.</p>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
+<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Poll</span>
+
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">Poll</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">"Poll does not exist"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="s">'polls/detail.html'</span><span class="p">,</span> <span class="p">{</span><span class="s">'poll'</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>In order to use the <tt class="docutils literal"><span class="pre">Http404</span></tt> exception to its fullest, you should create a
+template that is displayed when a 404 error is raised. This template should be
+called <tt class="docutils literal"><span class="pre">404.html</span></tt> and located in the top level of your template tree.</p>
+<p>If you provide a message when raising an <tt class="docutils literal"><span class="pre">Http404</span></tt> exception, it will appear
+in the standard 404 template displayed when <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DEBUG"><tt class="xref std std-setting docutils literal"><span class="pre">DEBUG</span></tt></a> is <tt class="docutils literal"><span class="pre">True</span></tt>. Use
+these messages for debugging purposes; they generally aren’t suitable for use
+in a production 404 template.</p>
+</div>
+</div>
+<div class="section" id="s-customizing-error-views">
+<span id="s-id1"></span><span id="customizing-error-views"></span><span id="id1"></span><h2>Customizing error views<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#customizing-error-views" title="Permalink to this headline">¶</a></h2>
+<p>The default error views in Django should suffice for most Web applications,
+but can easily be overridden if you need any custom behavior. Simply specify
+the handlers as seen below in your URLconf (setting them anywhere else will
+have no effect).</p>
+<p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/views/#django.views.defaults.page_not_found" title="django.views.defaults.page_not_found"><tt class="xref py py-func docutils literal"><span class="pre">page_not_found()</span></tt></a> view is overridden by
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/urls/#django.conf.urls.handler404" title="django.conf.urls.handler404"><tt class="xref py py-data docutils literal"><span class="pre">handler404</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">handler404</span> <span class="o">=</span> <span class="s">'mysite.views.my_custom_page_not_found_view'</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/views/#django.views.defaults.server_error" title="django.views.defaults.server_error"><tt class="xref py py-func docutils literal"><span class="pre">server_error()</span></tt></a> view is overridden by
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/urls/#django.conf.urls.handler500" title="django.conf.urls.handler500"><tt class="xref py py-data docutils literal"><span class="pre">handler500</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">handler500</span> <span class="o">=</span> <span class="s">'mysite.views.my_custom_error_view'</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/views/#django.views.defaults.permission_denied" title="django.views.defaults.permission_denied"><tt class="xref py py-func docutils literal"><span class="pre">permission_denied()</span></tt></a> view is overridden by
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/urls/#django.conf.urls.handler403" title="django.conf.urls.handler403"><tt class="xref py py-data docutils literal"><span class="pre">handler403</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">handler403</span> <span class="o">=</span> <span class="s">'mysite.views.my_custom_permission_denied_view'</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/views/#django.views.defaults.bad_request" title="django.views.defaults.bad_request"><tt class="xref py py-func docutils literal"><span class="pre">bad_request()</span></tt></a> view is overridden by
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/urls/#django.conf.urls.handler400" title="django.conf.urls.handler400"><tt class="xref py py-data docutils literal"><span class="pre">handler400</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">handler400</span> <span class="o">=</span> <span class="s">'mysite.views.my_custom_bad_request_view'</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/topics/http/urls/"><i class="icon icon-chevron-left"></i> URL dispatcher</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/">View decorators <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/topics/http/views/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./Writing views _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Jacob Perkins donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#">Writing views</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#a-simple-view">A simple view</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#mapping-urls-to-views">Mapping URLs to views</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#returning-errors">Returning errors</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#the-http404-exception">The Http404 exception</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/views/#customizing-error-views">Customizing error views</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/topics/http/urls/">URL dispatcher</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/topics/http/decorators/">View decorators</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/topics/">Using Django</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/topics/http/">Handling HTTP requests</a>
+      
+      <ul><li>Writing views</li></ul>
+      </li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./Writing views _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

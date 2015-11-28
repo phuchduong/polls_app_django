@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://docs.djangoproject.com/en/1.8/topics/forms/media/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>Form Assets (the Media class) | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./Form Assets (the Media class) _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./Form Assets (the Media class) _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./Form Assets (the Media class) _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./Form Assets (the Media class) _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/topics/forms/media/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./Form Assets (the Media class) _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./Form Assets (the Media class) _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./Form Assets (the Media class) _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./Form Assets (the Media class) _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./Form Assets (the Media class) _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/topics/forms/media/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/topics/forms/media/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/topics/forms/media/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/topics/forms/media/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/topics/forms/media/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/topics/forms/media/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-form-assets-the-media-class">
+<span id="form-assets-the-media-class"></span><h1>Form Assets (the <tt class="docutils literal"><span class="pre">Media</span></tt> class)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#form-assets-the-media-class" title="Permalink to this headline">¶</a></h1>
+<p>Rendering an attractive and easy-to-use Web form requires more than just
+HTML - it also requires CSS stylesheets, and if you want to use fancy
+“Web2.0” widgets, you may also need to include some JavaScript on each
+page. The exact combination of CSS and JavaScript that is required for
+any given page will depend upon the widgets that are in use on that page.</p>
+<p>This is where asset definitions come in. Django allows you to
+associate different files – like stylesheets and scripts – with the
+forms and widgets that require those assets. For example, if you want
+to use a calendar to render DateFields, you can define a custom
+Calendar widget. This widget can then be associated with the CSS and
+JavaScript that is required to render the calendar. When the Calendar
+widget is used on a form, Django is able to identify the CSS and
+JavaScript files that are required, and provide the list of file names
+in a form suitable for easy inclusion on your Web page.</p>
+<div class="admonition-assets-and-django-admin admonition">
+<p class="first admonition-title">Assets and Django Admin</p>
+<p>The Django Admin application defines a number of customized
+widgets for calendars, filtered selections, and so on. These
+widgets define asset requirements, and the Django Admin uses the
+custom widgets in place of the Django defaults. The Admin
+templates will only include those files that are required to
+render the widgets on any given page.</p>
+<p class="last">If you like the widgets that the Django Admin application uses,
+feel free to use them in your own application! They’re all stored
+in <tt class="docutils literal"><span class="pre">django.contrib.admin.widgets</span></tt>.</p>
+</div>
+<div class="admonition-which-javascript-toolkit admonition">
+<p class="first admonition-title">Which JavaScript toolkit?</p>
+<p class="last">Many JavaScript toolkits exist, and many of them include widgets (such
+as calendar widgets) that can be used to enhance your application.
+Django has deliberately avoided blessing any one JavaScript toolkit.
+Each toolkit has its own relative strengths and weaknesses - use
+whichever toolkit suits your requirements. Django is able to integrate
+with any JavaScript toolkit.</p>
+</div>
+<div class="section" id="s-assets-as-a-static-definition">
+<span id="s-id1"></span><span id="assets-as-a-static-definition"></span><span id="id1"></span><h2>Assets as a static definition<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#assets-as-a-static-definition" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to define assets is as a static definition. Using this
+method, the declaration is an inner <tt class="docutils literal"><span class="pre">Media</span></tt> class. The properties of the
+inner class define the requirements.</p>
+<p>Here’s a simple example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="k">class</span> <span class="nc">CalendarWidget</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+        <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'all'</span><span class="p">:</span> <span class="p">(</span><span class="s">'pretty.css'</span><span class="p">,)</span>
+        <span class="p">}</span>
+        <span class="n">js</span> <span class="o">=</span> <span class="p">(</span><span class="s">'animations.js'</span><span class="p">,</span> <span class="s">'actions.js'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This code defines a <tt class="docutils literal"><span class="pre">CalendarWidget</span></tt>, which will be based on <tt class="docutils literal"><span class="pre">TextInput</span></tt>.
+Every time the CalendarWidget is used on a form, that form will be directed
+to include the CSS file <tt class="docutils literal"><span class="pre">pretty.css</span></tt>, and the JavaScript files
+<tt class="docutils literal"><span class="pre">animations.js</span></tt> and <tt class="docutils literal"><span class="pre">actions.js</span></tt>.</p>
+<p>This static definition is converted at runtime into a widget property
+named <tt class="docutils literal"><span class="pre">media</span></tt>. The list of assets for a <tt class="docutils literal"><span class="pre">CalendarWidget</span></tt> instance
+can be retrieved through this property:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">CalendarWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
+<span class="go">&lt;link href="http://static.example.com/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/actions.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>Here’s a list of all possible <tt class="docutils literal"><span class="pre">Media</span></tt> options. There are no required options.</p>
+<div class="section" id="s-css">
+<span id="css"></span><h3><tt class="docutils literal"><span class="pre">css</span></tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#css" title="Permalink to this headline">¶</a></h3>
+<p>A dictionary describing the CSS files required for various forms of output
+media.</p>
+<p>The values in the dictionary should be a tuple/list of file names. See
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#form-asset-paths"><em>the section on paths</em></a> for details of how to
+specify paths to these files.</p>
+<p>The keys in the dictionary are the output media types. These are the same
+types accepted by CSS files in media declarations: ‘all’, ‘aural’, ‘braille’,
+‘embossed’, ‘handheld’, ‘print’, ‘projection’, ‘screen’, ‘tty’ and ‘tv’. If
+you need to have different stylesheets for different media types, provide
+a list of CSS files for each output medium. The following example would
+provide two CSS options – one for the screen, and one for print:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+    <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'screen'</span><span class="p">:</span> <span class="p">(</span><span class="s">'pretty.css'</span><span class="p">,),</span>
+        <span class="s">'print'</span><span class="p">:</span> <span class="p">(</span><span class="s">'newspaper.css'</span><span class="p">,)</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>If a group of CSS files are appropriate for multiple output media types,
+the dictionary key can be a comma separated list of output media types.
+In the following example, TV’s and projectors will have the same media
+requirements:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+    <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'screen'</span><span class="p">:</span> <span class="p">(</span><span class="s">'pretty.css'</span><span class="p">,),</span>
+        <span class="s">'tv,projector'</span><span class="p">:</span> <span class="p">(</span><span class="s">'lo_res.css'</span><span class="p">,),</span>
+        <span class="s">'print'</span><span class="p">:</span> <span class="p">(</span><span class="s">'newspaper.css'</span><span class="p">,)</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>If this last CSS definition were to be rendered, it would become the following HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;link href="http://static.example.com/pretty.css" type="text/css" media="screen" rel="stylesheet" /&gt;
+&lt;link href="http://static.example.com/lo_res.css" type="text/css" media="tv,projector" rel="stylesheet" /&gt;
+&lt;link href="http://static.example.com/newspaper.css" type="text/css" media="print" rel="stylesheet" /&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="s-js">
+<span id="js"></span><h3><tt class="docutils literal"><span class="pre">js</span></tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#js" title="Permalink to this headline">¶</a></h3>
+<p>A tuple describing the required JavaScript files. See <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#form-asset-paths"><em>the
+section on paths</em></a> for details of how to specify
+paths to these files.</p>
+</div>
+<div class="section" id="s-extend">
+<span id="extend"></span><h3><tt class="docutils literal"><span class="pre">extend</span></tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#extend" title="Permalink to this headline">¶</a></h3>
+<p>A boolean defining inheritance behavior for <tt class="docutils literal"><span class="pre">Media</span></tt> declarations.</p>
+<p>By default, any object using a static <tt class="docutils literal"><span class="pre">Media</span></tt> definition will
+inherit all the assets associated with the parent widget. This occurs
+regardless of how the parent defines its own requirements. For
+example, if we were to extend our basic Calendar widget from the
+example above:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">FancyCalendarWidget</span><span class="p">(</span><span class="n">CalendarWidget</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>            <span class="s">'all'</span><span class="p">:</span> <span class="p">(</span><span class="s">'fancy.css'</span><span class="p">,)</span>
+<span class="gp">... </span>        <span class="p">}</span>
+<span class="gp">... </span>        <span class="n">js</span> <span class="o">=</span> <span class="p">(</span><span class="s">'whizbang.js'</span><span class="p">,)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">FancyCalendarWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
+<span class="go">&lt;link href="http://static.example.com/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;link href="http://static.example.com/fancy.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/actions.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/whizbang.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>The FancyCalendar widget inherits all the assets from its parent
+widget. If you don’t want <tt class="docutils literal"><span class="pre">Media</span></tt> to be inherited in this way, add
+an <tt class="docutils literal"><span class="pre">extend=False</span></tt> declaration to the <tt class="docutils literal"><span class="pre">Media</span></tt> declaration:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">FancyCalendarWidget</span><span class="p">(</span><span class="n">CalendarWidget</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">extend</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">... </span>        <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>            <span class="s">'all'</span><span class="p">:</span> <span class="p">(</span><span class="s">'fancy.css'</span><span class="p">,)</span>
+<span class="gp">... </span>        <span class="p">}</span>
+<span class="gp">... </span>        <span class="n">js</span> <span class="o">=</span> <span class="p">(</span><span class="s">'whizbang.js'</span><span class="p">,)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">FancyCalendarWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
+<span class="go">&lt;link href="http://static.example.com/fancy.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/whizbang.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>If you require even more control over inheritance, define your assets using a
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#dynamic-property"><em>dynamic property</em></a>. Dynamic properties give you
+complete control over which files are inherited, and which are not.</p>
+</div>
+</div>
+<div class="section" id="s-media-as-a-dynamic-property">
+<span id="s-dynamic-property"></span><span id="media-as-a-dynamic-property"></span><span id="dynamic-property"></span><h2><tt class="docutils literal"><span class="pre">Media</span></tt> as a dynamic property<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-as-a-dynamic-property" title="Permalink to this headline">¶</a></h2>
+<p>If you need to perform some more sophisticated manipulation of asset
+requirements, you can define the <tt class="docutils literal"><span class="pre">media</span></tt> property directly. This is
+done by defining a widget property that returns an instance of
+<tt class="docutils literal"><span class="pre">forms.Media</span></tt>.  The constructor for <tt class="docutils literal"><span class="pre">forms.Media</span></tt> accepts <tt class="docutils literal"><span class="pre">css</span></tt>
+and <tt class="docutils literal"><span class="pre">js</span></tt> keyword arguments in the same format as that used in a
+static media definition.</p>
+<p>For example, the static definition for our Calendar Widget could also
+be defined in a dynamic fashion:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CalendarWidget</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_media</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">forms</span><span class="o">.</span><span class="n">Media</span><span class="p">(</span><span class="n">css</span><span class="o">=</span><span class="p">{</span><span class="s">'all'</span><span class="p">:</span> <span class="p">(</span><span class="s">'pretty.css'</span><span class="p">,)},</span>
+                           <span class="n">js</span><span class="o">=</span><span class="p">(</span><span class="s">'animations.js'</span><span class="p">,</span> <span class="s">'actions.js'</span><span class="p">))</span>
+    <span class="n">media</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_media</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the section on <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-objects">Media objects</a> for more details on how to construct
+return values for dynamic <tt class="docutils literal"><span class="pre">media</span></tt> properties.</p>
+</div>
+<div class="section" id="s-paths-in-asset-definitions">
+<span id="s-form-asset-paths"></span><span id="paths-in-asset-definitions"></span><span id="form-asset-paths"></span><h2>Paths in asset definitions<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#paths-in-asset-definitions" title="Permalink to this headline">¶</a></h2>
+<p>Paths used to specify assets can be either relative or absolute. If a
+path starts with <tt class="docutils literal"><span class="pre">/</span></tt>, <tt class="docutils literal"><span class="pre">http://</span></tt> or <tt class="docutils literal"><span class="pre">https://</span></tt>, it will be
+interpreted as an absolute path, and left as-is. All other paths will
+be prepended with the value of the appropriate prefix.</p>
+<p>As part of the introduction of the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/staticfiles/"><em>staticfiles app</em></a> two new settings were added
+to refer to “static files” (images, CSS, JavaScript, etc.) that are needed
+to render a complete web page: <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-STATIC_URL"><tt class="xref std std-setting docutils literal"><span class="pre">STATIC_URL</span></tt></a> and <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-STATIC_ROOT"><tt class="xref std std-setting docutils literal"><span class="pre">STATIC_ROOT</span></tt></a>.</p>
+<p>To find the appropriate prefix to use, Django will check if the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-STATIC_URL"><tt class="xref std std-setting docutils literal"><span class="pre">STATIC_URL</span></tt></a> setting is not <tt class="docutils literal"><span class="pre">None</span></tt> and automatically fall back
+to using <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-MEDIA_URL"><tt class="xref std std-setting docutils literal"><span class="pre">MEDIA_URL</span></tt></a>. For example, if the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-MEDIA_URL"><tt class="xref std std-setting docutils literal"><span class="pre">MEDIA_URL</span></tt></a> for
+your site was <tt class="docutils literal"><span class="pre">'http://uploads.example.com/'</span></tt> and <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-STATIC_URL"><tt class="xref std std-setting docutils literal"><span class="pre">STATIC_URL</span></tt></a>
+was <tt class="docutils literal"><span class="pre">None</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">CalendarWidget</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>            <span class="s">'all'</span><span class="p">:</span> <span class="p">(</span><span class="s">'/css/pretty.css'</span><span class="p">,),</span>
+<span class="gp">... </span>        <span class="p">}</span>
+<span class="gp">... </span>        <span class="n">js</span> <span class="o">=</span> <span class="p">(</span><span class="s">'animations.js'</span><span class="p">,</span> <span class="s">'http://othersite.com/actions.js'</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">CalendarWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
+<span class="go">&lt;link href="/css/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://uploads.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://othersite.com/actions.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>But if <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-STATIC_URL"><tt class="xref std std-setting docutils literal"><span class="pre">STATIC_URL</span></tt></a> is <tt class="docutils literal"><span class="pre">'http://static.example.com/'</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">CalendarWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
+<span class="go">&lt;link href="/css/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://othersite.com/actions.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="s-media-objects">
+<span id="media-objects"></span><h2><tt class="docutils literal"><span class="pre">Media</span></tt> objects<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-objects" title="Permalink to this headline">¶</a></h2>
+<p>When you interrogate the <tt class="docutils literal"><span class="pre">media</span></tt> attribute of a widget or form, the
+value that is returned is a <tt class="docutils literal"><span class="pre">forms.Media</span></tt> object. As we have already
+seen, the string representation of a <tt class="docutils literal"><span class="pre">Media</span></tt> object is the HTML
+required to include the relevant files in the <tt class="docutils literal"><span class="pre">&lt;head&gt;</span></tt> block of your
+HTML page.</p>
+<p>However, <tt class="docutils literal"><span class="pre">Media</span></tt> objects have some other interesting properties.</p>
+<div class="section" id="s-subsets-of-assets">
+<span id="subsets-of-assets"></span><h3>Subsets of assets<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#subsets-of-assets" title="Permalink to this headline">¶</a></h3>
+<p>If you only want files of a particular type, you can use the subscript
+operator to filter out a medium of interest. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">CalendarWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
+<span class="go">&lt;link href="http://static.example.com/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/actions.js"&gt;&lt;/script&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">media</span><span class="p">[</span><span class="s">'css'</span><span class="p">])</span>
+<span class="go">&lt;link href="http://static.example.com/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+</pre></div>
+</div>
+<p>When you use the subscript operator, the value that is returned is a
+new <tt class="docutils literal"><span class="pre">Media</span></tt> object – but one that only contains the media of interest.</p>
+</div>
+<div class="section" id="s-combining-media-objects">
+<span id="combining-media-objects"></span><h3>Combining <tt class="docutils literal"><span class="pre">Media</span></tt> objects<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#combining-media-objects" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">Media</span></tt> objects can also be added together. When two <tt class="docutils literal"><span class="pre">Media</span></tt> objects are
+added, the resulting <tt class="docutils literal"><span class="pre">Media</span></tt> object contains the union of the assets
+specified by both:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">CalendarWidget</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>            <span class="s">'all'</span><span class="p">:</span> <span class="p">(</span><span class="s">'pretty.css'</span><span class="p">,)</span>
+<span class="gp">... </span>        <span class="p">}</span>
+<span class="gp">... </span>        <span class="n">js</span> <span class="o">=</span> <span class="p">(</span><span class="s">'animations.js'</span><span class="p">,</span> <span class="s">'actions.js'</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">OtherWidget</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">js</span> <span class="o">=</span> <span class="p">(</span><span class="s">'whizbang.js'</span><span class="p">,)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w1</span> <span class="o">=</span> <span class="n">CalendarWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w2</span> <span class="o">=</span> <span class="n">OtherWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">w1</span><span class="o">.</span><span class="n">media</span> <span class="o">+</span> <span class="n">w2</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
+<span class="go">&lt;link href="http://static.example.com/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/actions.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/whizbang.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="s-media-on-forms">
+<span id="media-on-forms"></span><h2><tt class="docutils literal"><span class="pre">Media</span></tt> on Forms<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-on-forms" title="Permalink to this headline">¶</a></h2>
+<p>Widgets aren’t the only objects that can have <tt class="docutils literal"><span class="pre">media</span></tt> definitions –
+forms can also define <tt class="docutils literal"><span class="pre">media</span></tt>. The rules for <tt class="docutils literal"><span class="pre">media</span></tt> definitions
+on forms are the same as the rules for widgets: declarations can be
+static or dynamic; path and inheritance rules for those declarations
+are exactly the same.</p>
+<p>Regardless of whether you define a <tt class="docutils literal"><span class="pre">media</span></tt> declaration, <em>all</em> Form
+objects have a <tt class="docutils literal"><span class="pre">media</span></tt> property. The default value for this property
+is the result of adding the <tt class="docutils literal"><span class="pre">media</span></tt> definitions for all widgets that
+are part of the form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">date</span> <span class="o">=</span> <span class="n">DateField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">CalendarWidget</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">name</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">widget</span><span class="o">=</span><span class="n">OtherWidget</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">media</span>
+<span class="go">&lt;link href="http://static.example.com/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/actions.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/whizbang.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>If you want to associate additional assets with a form – for example,
+CSS for form layout – simply add a <tt class="docutils literal"><span class="pre">Media</span></tt> declaration to the
+form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">date</span> <span class="o">=</span> <span class="n">DateField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">CalendarWidget</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">name</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">widget</span><span class="o">=</span><span class="n">OtherWidget</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">css</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>            <span class="s">'all'</span><span class="p">:</span> <span class="p">(</span><span class="s">'layout.css'</span><span class="p">,)</span>
+<span class="gp">... </span>        <span class="p">}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">media</span>
+<span class="go">&lt;link href="http://static.example.com/pretty.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;link href="http://static.example.com/layout.css" type="text/css" media="all" rel="stylesheet" /&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/animations.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/actions.js"&gt;&lt;/script&gt;</span>
+<span class="go">&lt;script type="text/javascript" src="http://static.example.com/whizbang.js"&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/"><i class="icon icon-chevron-left"></i> Creating forms from models</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/topics/templates/">Templates <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./Form Assets (the Media class) _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Adam Bogdał donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#">Form Assets (the <tt class="docutils literal"><span class="pre">Media</span></tt> class)</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#assets-as-a-static-definition">Assets as a static definition</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#css"><tt class="docutils literal"><span class="pre">css</span></tt></a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#js"><tt class="docutils literal"><span class="pre">js</span></tt></a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#extend"><tt class="docutils literal"><span class="pre">extend</span></tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-as-a-dynamic-property"><tt class="docutils literal"><span class="pre">Media</span></tt> as a dynamic property</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#paths-in-asset-definitions">Paths in asset definitions</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-objects"><tt class="docutils literal"><span class="pre">Media</span></tt> objects</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#subsets-of-assets">Subsets of assets</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#combining-media-objects">Combining <tt class="docutils literal"><span class="pre">Media</span></tt> objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-on-forms"><tt class="docutils literal"><span class="pre">Media</span></tt> on Forms</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/">Creating forms from models</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/topics/templates/">Templates</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/topics/">Using Django</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/topics/forms/">Working with forms</a>
+      
+      <ul><li>Form Assets (the <tt class="docutils literal"><span class="pre">Media</span></tt> class)</li></ul>
+      </li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./Form Assets (the Media class) _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

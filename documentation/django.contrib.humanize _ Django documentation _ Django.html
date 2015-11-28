@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>django.contrib.humanize | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./django.contrib.humanize _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./django.contrib.humanize _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./django.contrib.humanize _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./django.contrib.humanize _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/ref/contrib/humanize/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./django.contrib.humanize _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./django.contrib.humanize _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./django.contrib.humanize _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./django.contrib.humanize _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./django.contrib.humanize _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/ref/contrib/humanize/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/ref/contrib/humanize/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/ref/contrib/humanize/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/ref/contrib/humanize/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/ref/contrib/humanize/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-module-django.contrib.humanize">
+<span id="s-django-contrib-humanize"></span><span id="module-django.contrib.humanize"></span><span id="django-contrib-humanize"></span><h1>django.contrib.humanize<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#module-django.contrib.humanize" title="Permalink to this headline">¶</a></h1>
+<p>A set of Django template filters useful for adding a “human touch” to data.</p>
+<p>To activate these filters, add <tt class="docutils literal"><span class="pre">'django.contrib.humanize'</span></tt> to your
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-INSTALLED_APPS"><tt class="xref std std-setting docutils literal"><span class="pre">INSTALLED_APPS</span></tt></a> setting. Once you’ve done that, use
+<tt class="docutils literal"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">humanize</span> <span class="pre">%}</span></tt> in a template, and you’ll have access to the following
+filters.</p>
+<div class="section" id="s-apnumber">
+<span id="s-std:templatefilter-apnumber"></span><span id="apnumber"></span><span id="std:templatefilter-apnumber"></span><h2>apnumber<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#apnumber" title="Permalink to this headline">¶</a></h2>
+<p>For numbers 1-9, returns the number spelled out. Otherwise, returns the
+number. This follows Associated Press style.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">1</span></tt> becomes <tt class="docutils literal"><span class="pre">one</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">2</span></tt> becomes <tt class="docutils literal"><span class="pre">two</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">10</span></tt> becomes <tt class="docutils literal"><span class="pre">10</span></tt>.</li>
+</ul>
+<p>You can pass in either an integer or a string representation of an integer.</p>
+</div>
+<div class="section" id="s-intcomma">
+<span id="s-std:templatefilter-intcomma"></span><span id="intcomma"></span><span id="std:templatefilter-intcomma"></span><h2>intcomma<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#intcomma" title="Permalink to this headline">¶</a></h2>
+<p>Converts an integer to a string containing commas every three digits.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">4500</span></tt> becomes <tt class="docutils literal"><span class="pre">4,500</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">45000</span></tt> becomes <tt class="docutils literal"><span class="pre">45,000</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">450000</span></tt> becomes <tt class="docutils literal"><span class="pre">450,000</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">4500000</span></tt> becomes <tt class="docutils literal"><span class="pre">4,500,000</span></tt>.</li>
+</ul>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/i18n/formatting/#format-localization"><em>Format localization</em></a> will be respected if enabled,
+e.g. with the <tt class="docutils literal"><span class="pre">'de'</span></tt> language:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">45000</span></tt> becomes <tt class="docutils literal"><span class="pre">'45.000'</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">450000</span></tt> becomes <tt class="docutils literal"><span class="pre">'450.000'</span></tt>.</li>
+</ul>
+<p>You can pass in either an integer or a string representation of an integer.</p>
+</div>
+<div class="section" id="s-intword">
+<span id="s-std:templatefilter-intword"></span><span id="intword"></span><span id="std:templatefilter-intword"></span><h2>intword<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#intword" title="Permalink to this headline">¶</a></h2>
+<p>Converts a large integer to a friendly text representation. Works best for
+numbers over 1 million.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">1000000</span></tt> becomes <tt class="docutils literal"><span class="pre">1.0</span> <span class="pre">million</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">1200000</span></tt> becomes <tt class="docutils literal"><span class="pre">1.2</span> <span class="pre">million</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">1200000000</span></tt> becomes <tt class="docutils literal"><span class="pre">1.2</span> <span class="pre">billion</span></tt>.</li>
+</ul>
+<p>Values up to 10^100 (Googol) are supported.</p>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/i18n/formatting/#format-localization"><em>Format localization</em></a> will be respected if enabled,
+e.g. with the <tt class="docutils literal"><span class="pre">'de'</span></tt> language:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">1000000</span></tt> becomes <tt class="docutils literal"><span class="pre">'1,0</span> <span class="pre">Million'</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">1200000</span></tt> becomes <tt class="docutils literal"><span class="pre">'1,2</span> <span class="pre">Million'</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">1200000000</span></tt> becomes <tt class="docutils literal"><span class="pre">'1,2</span> <span class="pre">Milliarden'</span></tt>.</li>
+</ul>
+<p>You can pass in either an integer or a string representation of an integer.</p>
+</div>
+<div class="section" id="s-naturalday">
+<span id="s-std:templatefilter-naturalday"></span><span id="naturalday"></span><span id="std:templatefilter-naturalday"></span><h2>naturalday<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#naturalday" title="Permalink to this headline">¶</a></h2>
+<p>For dates that are the current day or within one day, return “today”,
+“tomorrow” or “yesterday”, as appropriate. Otherwise, format the date using
+the passed in format string.</p>
+<p><strong>Argument:</strong> Date formatting string as described in the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#std:templatefilter-date"><tt class="xref std std-tfilter docutils literal"><span class="pre">date</span></tt></a> tag.</p>
+<p>Examples (when ‘today’ is 17 Feb 2007):</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">16</span> <span class="pre">Feb</span> <span class="pre">2007</span></tt> becomes <tt class="docutils literal"><span class="pre">yesterday</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span></tt> becomes <tt class="docutils literal"><span class="pre">today</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">18</span> <span class="pre">Feb</span> <span class="pre">2007</span></tt> becomes <tt class="docutils literal"><span class="pre">tomorrow</span></tt>.</li>
+<li>Any other day is formatted according to given argument or the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DATE_FORMAT"><tt class="xref std std-setting docutils literal"><span class="pre">DATE_FORMAT</span></tt></a> setting if no argument is given.</li>
+</ul>
+</div>
+<div class="section" id="s-naturaltime">
+<span id="s-std:templatefilter-naturaltime"></span><span id="naturaltime"></span><span id="std:templatefilter-naturaltime"></span><h2>naturaltime<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#naturaltime" title="Permalink to this headline">¶</a></h2>
+<p>For datetime values, returns a string representing how many seconds,
+minutes or hours ago it was – falling back to the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#std:templatefilter-timesince"><tt class="xref std std-tfilter docutils literal"><span class="pre">timesince</span></tt></a>
+format if the value is more than a day old. In case the datetime value is in
+the future the return value will automatically use an appropriate phrase.</p>
+<p>Examples (when ‘now’ is 17 Feb 2007 16:30:00):</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:30:00</span></tt> becomes <tt class="docutils literal"><span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:29:31</span></tt> becomes <tt class="docutils literal"><span class="pre">29</span> <span class="pre">seconds</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:29:00</span></tt> becomes <tt class="docutils literal"><span class="pre">a</span> <span class="pre">minute</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:25:35</span></tt> becomes <tt class="docutils literal"><span class="pre">4</span> <span class="pre">minutes</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">15:30:29</span></tt> becomes <tt class="docutils literal"><span class="pre">59</span> <span class="pre">minutes</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">15:30:01</span></tt> becomes <tt class="docutils literal"><span class="pre">59</span> <span class="pre">minutes</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">15:30:00</span></tt> becomes <tt class="docutils literal"><span class="pre">an</span> <span class="pre">hour</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">13:31:29</span></tt> becomes <tt class="docutils literal"><span class="pre">2</span> <span class="pre">hours</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">16</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">13:31:29</span></tt> becomes <tt class="docutils literal"><span class="pre">1</span> <span class="pre">day,</span> <span class="pre">2</span> <span class="pre">hours</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">16</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">13:30:01</span></tt> becomes <tt class="docutils literal"><span class="pre">1</span> <span class="pre">day,</span> <span class="pre">2</span> <span class="pre">hours</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">16</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">13:30:00</span></tt> becomes <tt class="docutils literal"><span class="pre">1</span> <span class="pre">day,</span> <span class="pre">3</span> <span class="pre">hours</span> <span class="pre">ago</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:30:30</span></tt> becomes <tt class="docutils literal"><span class="pre">30</span> <span class="pre">seconds</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:30:29</span></tt> becomes <tt class="docutils literal"><span class="pre">29</span> <span class="pre">seconds</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:31:00</span></tt> becomes <tt class="docutils literal"><span class="pre">a</span> <span class="pre">minute</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:34:35</span></tt> becomes <tt class="docutils literal"><span class="pre">4</span> <span class="pre">minutes</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">17:30:29</span></tt> becomes <tt class="docutils literal"><span class="pre">an</span> <span class="pre">hour</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">17</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">18:31:29</span></tt> becomes <tt class="docutils literal"><span class="pre">2</span> <span class="pre">hours</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">18</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">16:31:29</span></tt> becomes <tt class="docutils literal"><span class="pre">1</span> <span class="pre">day</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">26</span> <span class="pre">Feb</span> <span class="pre">2007</span> <span class="pre">18:31:29</span></tt> becomes <tt class="docutils literal"><span class="pre">1</span> <span class="pre">week,</span> <span class="pre">2</span> <span class="pre">days</span> <span class="pre">from</span> <span class="pre">now</span></tt>.</li>
+</ul>
+</div>
+<div class="section" id="s-ordinal">
+<span id="s-std:templatefilter-ordinal"></span><span id="ordinal"></span><span id="std:templatefilter-ordinal"></span><h2>ordinal<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#ordinal" title="Permalink to this headline">¶</a></h2>
+<p>Converts an integer to its ordinal as a string.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">1</span></tt> becomes <tt class="docutils literal"><span class="pre">1st</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">2</span></tt> becomes <tt class="docutils literal"><span class="pre">2nd</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">3</span></tt> becomes <tt class="docutils literal"><span class="pre">3rd</span></tt>.</li>
+</ul>
+<p>You can pass in either an integer or a string representation of an integer.</p>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/ref/contrib/gis/deployment/"><i class="icon icon-chevron-left"></i> Deploying GeoDjango</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/ref/contrib/messages/">The messages framework <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./django.contrib.humanize _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Ulrich Petri donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#">django.contrib.humanize</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#apnumber">apnumber</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#intcomma">intcomma</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#intword">intword</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#naturalday">naturalday</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#naturaltime">naturaltime</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/humanize/#ordinal">ordinal</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/gis/deployment/">Deploying GeoDjango</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/messages/">The messages framework</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/">API Reference</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/contrib/"><tt class="docutils literal"><span class="pre">contrib</span></tt> packages</a>
+      
+      <ul><li>django.contrib.humanize</li></ul>
+      </li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./django.contrib.humanize _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

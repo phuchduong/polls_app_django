@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://docs.djangoproject.com/en/1.8/ref/files/storage/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>File storage API | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./File storage API _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./File storage API _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./File storage API _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./File storage API _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/ref/files/storage/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./File storage API _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./File storage API _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./File storage API _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./File storage API _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./File storage API _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/ref/files/storage/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/ref/files/storage/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/ref/files/storage/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/ref/files/storage/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/ref/files/storage/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/ref/files/storage/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-module-django.core.files.storage">
+<span id="s-file-storage-api"></span><span id="module-django.core.files.storage"></span><span id="file-storage-api"></span><h1>File storage API<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#module-django.core.files.storage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="s-getting-the-current-storage-class">
+<span id="getting-the-current-storage-class"></span><h2>Getting the current storage class<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#getting-the-current-storage-class" title="Permalink to this headline">¶</a></h2>
+<p>Django provides two convenient ways to access the current storage class:</p>
+<dl class="class">
+<dt id="django.core.files.storage.DefaultStorage">
+<em class="property">class </em><tt class="descname">DefaultStorage</tt><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#DefaultStorage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.DefaultStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.DefaultStorage" title="django.core.files.storage.DefaultStorage"><tt class="xref py py-class docutils literal"><span class="pre">DefaultStorage</span></tt></a> provides
+lazy access to the current default storage system as defined by
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DEFAULT_FILE_STORAGE"><tt class="xref std std-setting docutils literal"><span class="pre">DEFAULT_FILE_STORAGE</span></tt></a>. <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.DefaultStorage" title="django.core.files.storage.DefaultStorage"><tt class="xref py py-class docutils literal"><span class="pre">DefaultStorage</span></tt></a> uses
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.get_storage_class" title="django.core.files.storage.get_storage_class"><tt class="xref py py-func docutils literal"><span class="pre">get_storage_class()</span></tt></a> internally.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="django.core.files.storage.get_storage_class">
+<tt class="descname">get_storage_class</tt>(<em>import_path=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#get_storage_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.get_storage_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a class or module which implements the storage API.</p>
+<p>When called without the <tt class="docutils literal"><span class="pre">import_path</span></tt> parameter <tt class="docutils literal"><span class="pre">get_storage_class</span></tt>
+will return the current default storage system as defined by
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DEFAULT_FILE_STORAGE"><tt class="xref std std-setting docutils literal"><span class="pre">DEFAULT_FILE_STORAGE</span></tt></a>. If <tt class="docutils literal"><span class="pre">import_path</span></tt> is provided,
+<tt class="docutils literal"><span class="pre">get_storage_class</span></tt> will attempt to import the class or module from the
+given path and will return it if successful. An exception will be
+raised if the import is unsuccessful.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="s-the-filesystemstorage-class">
+<span id="the-filesystemstorage-class"></span><h2>The FileSystemStorage Class<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#the-filesystemstorage-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="django.core.files.storage.FileSystemStorage">
+<em class="property">class </em><tt class="descname">FileSystemStorage</tt>(<em>location=None</em>, <em>base_url=None</em>, <em>file_permissions_mode=None</em>, <em>directory_permissions_mode=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#FileSystemStorage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.FileSystemStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.FileSystemStorage" title="django.core.files.storage.FileSystemStorage"><tt class="xref py py-class docutils literal"><span class="pre">FileSystemStorage</span></tt></a> class implements
+basic file storage on a local filesystem. It inherits from
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage" title="django.core.files.storage.Storage"><tt class="xref py py-class docutils literal"><span class="pre">Storage</span></tt></a> and provides implementations
+for all the public methods thereof.</p>
+<dl class="attribute">
+<dt id="django.core.files.storage.FileSystemStorage.location">
+<tt class="descname">location</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.FileSystemStorage.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Absolute path to the directory that will hold the files.
+Defaults to the value of your <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-MEDIA_ROOT"><tt class="xref std std-setting docutils literal"><span class="pre">MEDIA_ROOT</span></tt></a> setting.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.core.files.storage.FileSystemStorage.base_url">
+<tt class="descname">base_url</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.FileSystemStorage.base_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL that serves the files stored at this location.
+Defaults to the value of your <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-MEDIA_URL"><tt class="xref std std-setting docutils literal"><span class="pre">MEDIA_URL</span></tt></a> setting.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.core.files.storage.FileSystemStorage.file_permissions_mode">
+<tt class="descname">file_permissions_mode</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.FileSystemStorage.file_permissions_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The file system permissions that the file will receive when it is
+saved. Defaults to <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-FILE_UPLOAD_PERMISSIONS"><tt class="xref std std-setting docutils literal"><span class="pre">FILE_UPLOAD_PERMISSIONS</span></tt></a>.</p>
+<div class="versionadded">
+<span class="title">New in Django 1.7:</span> <p>The <tt class="docutils literal"><span class="pre">file_permissions_mode</span></tt> attribute was added. Previously files
+always received <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-FILE_UPLOAD_PERMISSIONS"><tt class="xref std std-setting docutils literal"><span class="pre">FILE_UPLOAD_PERMISSIONS</span></tt></a> permissions.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.core.files.storage.FileSystemStorage.directory_permissions_mode">
+<tt class="descname">directory_permissions_mode</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.FileSystemStorage.directory_permissions_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The file system permissions that the directory will receive when it is
+saved. Defaults to <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-FILE_UPLOAD_DIRECTORY_PERMISSIONS"><tt class="xref std std-setting docutils literal"><span class="pre">FILE_UPLOAD_DIRECTORY_PERMISSIONS</span></tt></a>.</p>
+<div class="versionadded">
+<span class="title">New in Django 1.7:</span> <p>The <tt class="docutils literal"><span class="pre">directory_permissions_mode</span></tt> attribute was added. Previously
+directories always received
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-FILE_UPLOAD_DIRECTORY_PERMISSIONS"><tt class="xref std std-setting docutils literal"><span class="pre">FILE_UPLOAD_DIRECTORY_PERMISSIONS</span></tt></a> permissions.</p>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">FileSystemStorage.delete()</span></tt> method will not raise
+an exception if the given file name does not exist.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="s-the-storage-class">
+<span id="the-storage-class"></span><h2>The Storage Class<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#the-storage-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="django.core.files.storage.Storage">
+<em class="property">class </em><tt class="descname">Storage</tt><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage" title="django.core.files.storage.Storage"><tt class="xref py py-class docutils literal"><span class="pre">Storage</span></tt></a> class provides a
+standardized API for storing files, along with a set of default
+behaviors that all other storage systems can inherit or override
+as necessary.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For methods returning naive <tt class="docutils literal"><span class="pre">datetime</span></tt> objects, the
+effective timezone used will be the current value of
+<tt class="docutils literal"><span class="pre">os.environ['TZ']</span></tt>; note that this is usually set from
+Django’s <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TIME_ZONE"><tt class="xref std std-setting docutils literal"><span class="pre">TIME_ZONE</span></tt></a>.</p>
+</div>
+<dl class="method">
+<dt id="django.core.files.storage.Storage.accessed_time">
+<tt class="descname">accessed_time</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.accessed_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.accessed_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a naive <tt class="docutils literal"><span class="pre">datetime</span></tt> object containing the last
+accessed time of the file. For storage systems that aren’t
+able to return the last accessed time this will raise
+<tt class="docutils literal"><span class="pre">NotImplementedError</span></tt> instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.created_time">
+<tt class="descname">created_time</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.created_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.created_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a naive <tt class="docutils literal"><span class="pre">datetime</span></tt> object containing the creation
+time of the file.  For storage systems that aren’t able to
+return the creation time this will raise
+<tt class="docutils literal"><span class="pre">NotImplementedError</span></tt> instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.delete">
+<tt class="descname">delete</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the file referenced by <tt class="docutils literal"><span class="pre">name</span></tt>. If deletion is not supported
+on the target storage system this will raise <tt class="docutils literal"><span class="pre">NotImplementedError</span></tt>
+instead</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.exists">
+<tt class="descname">exists</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.exists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="docutils literal"><span class="pre">True</span></tt> if a file referenced by the given name already exists
+in the storage system, or <tt class="docutils literal"><span class="pre">False</span></tt> if the name is available for a new
+file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.get_available_name">
+<tt class="descname">get_available_name</tt>(<em>name</em>, <em>max_length=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.get_available_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.get_available_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a filename based on the <tt class="docutils literal"><span class="pre">name</span></tt> parameter that’s free and
+available for new content to be written to on the target storage
+system.</p>
+<p>The length of the filename will not exceed <tt class="docutils literal"><span class="pre">max_length</span></tt>, if provided.
+If a free unique filename cannot be found, a
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/exceptions/#django.core.exceptions.SuspiciousOperation" title="django.core.exceptions.SuspiciousOperation"><tt class="xref py py-exc docutils literal"><span class="pre">SuspiciousFileOperation</span></tt></a> exception will be raised.</p>
+<p>If a file with <tt class="docutils literal"><span class="pre">name</span></tt> already exists, an underscore plus a random
+7 character alphanumeric string is appended to the filename before
+the extension.</p>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.7:</span> <p>Previously, an underscore followed by a number (e.g. <tt class="docutils literal"><span class="pre">"_1"</span></tt>,
+<tt class="docutils literal"><span class="pre">"_2"</span></tt>, etc.) was appended to the filename until an available
+name in the destination directory was found. A malicious user could
+exploit this deterministic algorithm to create a denial-of-service
+attack. This change was also made in Django 1.6.6, 1.5.9, and
+1.4.14.</p>
+</div>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p>The <tt class="docutils literal"><span class="pre">max_length</span></tt> argument was added.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.get_valid_name">
+<tt class="descname">get_valid_name</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.get_valid_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.get_valid_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a filename based on the <tt class="docutils literal"><span class="pre">name</span></tt> parameter that’s suitable
+for use on the target storage system.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.listdir">
+<tt class="descname">listdir</tt>(<em>path</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.listdir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.listdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the contents of the specified path, returning a 2-tuple of lists;
+the first item being directories, the second item being files. For
+storage systems that aren’t able to provide such a listing, this will
+raise a <tt class="docutils literal"><span class="pre">NotImplementedError</span></tt> instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.modified_time">
+<tt class="descname">modified_time</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.modified_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.modified_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a naive <tt class="docutils literal"><span class="pre">datetime</span></tt> object containing the last
+modified time. For storage systems that aren’t able to return
+the last modified time, this will raise
+<tt class="docutils literal"><span class="pre">NotImplementedError</span></tt> instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.open">
+<tt class="descname">open</tt>(<em>name</em>, <em>mode='rb'</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens the file given by <tt class="docutils literal"><span class="pre">name</span></tt>. Note that although the returned file
+is guaranteed to be a <tt class="docutils literal"><span class="pre">File</span></tt> object, it might actually be some
+subclass. In the case of remote file storage this means that
+reading/writing could be quite slow, so be warned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.path">
+<tt class="descname">path</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local filesystem path where the file can be opened using Python’s
+standard <tt class="docutils literal"><span class="pre">open()</span></tt>. For storage systems that aren’t accessible from
+the local filesystem, this will raise <tt class="docutils literal"><span class="pre">NotImplementedError</span></tt> instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.save">
+<tt class="descname">save</tt>(<em>name</em>, <em>content</em>, <em>max_length=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a new file using the storage system, preferably with the name
+specified. If there already exists a file with this name <tt class="docutils literal"><span class="pre">name</span></tt>, the
+storage system may modify the filename as necessary to get a unique
+name. The actual name of the stored file will be returned.</p>
+<p>The <tt class="docutils literal"><span class="pre">max_length</span></tt> argument is passed along to
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/custom-file-storage/#django.core.files.storage.get_available_name" title="django.core.files.storage.get_available_name"><tt class="xref py py-meth docutils literal"><span class="pre">get_available_name()</span></tt></a>.</p>
+<p>The <tt class="docutils literal"><span class="pre">content</span></tt> argument must be an instance of
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">django.core.files.File</span></tt></a> or of a subclass of
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a>.</p>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p>The <tt class="docutils literal"><span class="pre">max_length</span></tt> argument was added.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.size">
+<tt class="descname">size</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total size, in bytes, of the file referenced by <tt class="docutils literal"><span class="pre">name</span></tt>.
+For storage systems that aren’t able to return the file size this will
+raise <tt class="docutils literal"><span class="pre">NotImplementedError</span></tt> instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.storage.Storage.url">
+<tt class="descname">url</tt>(<em>name</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/storage/#Storage.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#django.core.files.storage.Storage.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the URL where the contents of the file referenced by <tt class="docutils literal"><span class="pre">name</span></tt>
+can be accessed. For storage systems that don’t support access by URL
+this will raise <tt class="docutils literal"><span class="pre">NotImplementedError</span></tt> instead.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/ref/files/file/"><i class="icon icon-chevron-left"></i> The <tt class="docutils literal"><span class="pre">File</span></tt> object</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/ref/files/uploads/">Uploaded Files and Upload Handlers <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./File storage API _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Xavier Dutreilh donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#">File storage API</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#getting-the-current-storage-class">Getting the current storage class</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#the-filesystemstorage-class">The FileSystemStorage Class</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/storage/#the-storage-class">The Storage Class</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/ref/files/file/">The <tt class="docutils literal"><span class="pre">File</span></tt> object</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/ref/files/uploads/">Uploaded Files and Upload Handlers</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/">API Reference</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/files/">File handling</a>
+      
+      <ul><li>File storage API</li></ul>
+      </li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./File storage API _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

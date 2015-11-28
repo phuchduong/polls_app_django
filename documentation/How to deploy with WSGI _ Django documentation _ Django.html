@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>How to deploy with WSGI | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./How to deploy with WSGI _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./How to deploy with WSGI _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script>
+    <link rel="stylesheet" href="./How to deploy with WSGI _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./How to deploy with WSGI _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script><style type="text/css"></style>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/howto/deployment/wsgi/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./How to deploy with WSGI _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./How to deploy with WSGI _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./How to deploy with WSGI _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./How to deploy with WSGI _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./How to deploy with WSGI _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/howto/deployment/wsgi/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-how-to-deploy-with-wsgi">
+<span id="how-to-deploy-with-wsgi"></span><h1>How to deploy with WSGI<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#how-to-deploy-with-wsgi" title="Permalink to this headline">¶</a></h1>
+<p>Django’s primary deployment platform is <a class="reference external" href="http://www.wsgi.org/">WSGI</a>, the Python standard for web
+servers and applications.</p>
+<p>Django’s <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/django-admin/#django-admin-startproject"><tt class="xref std std-djadmin docutils literal"><span class="pre">startproject</span></tt></a> management command sets up a simple default
+WSGI configuration for you, which you can tweak as needed for your project,
+and direct any WSGI-compliant application server to use.</p>
+<p>Django includes getting-started documentation for the following WSGI servers:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/modwsgi/">How to use Django with Apache and mod_wsgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/apache-auth/">Authenticating against Django’s user database from Apache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/gunicorn/">How to use Django with Gunicorn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/uwsgi/">How to use Django with uWSGI</a></li>
+</ul>
+</div>
+<div class="section" id="s-the-application-object">
+<span id="the-application-object"></span><h2>The <tt class="docutils literal"><span class="pre">application</span></tt> object<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#the-application-object" title="Permalink to this headline">¶</a></h2>
+<p>The key concept of deploying with WSGI is the <tt class="docutils literal"><span class="pre">application</span></tt> callable which
+the application server uses to communicate with your code. It’s commonly
+provided as an object named <tt class="docutils literal"><span class="pre">application</span></tt> in a Python module accessible to
+the server.</p>
+<p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/django-admin/#django-admin-startproject"><tt class="xref std std-djadmin docutils literal"><span class="pre">startproject</span></tt></a> command creates a file
+<tt class="file docutils literal"><span class="pre">&lt;project_name&gt;/wsgi.py</span></tt> that contains such an <tt class="docutils literal"><span class="pre">application</span></tt> callable.</p>
+<p>It’s used both by Django’s development server and in production WSGI
+deployments.</p>
+<p>WSGI servers obtain the path to the <tt class="docutils literal"><span class="pre">application</span></tt> callable from their
+configuration. Django’s built-in servers, namely the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/django-admin/#django-admin-runserver"><tt class="xref std std-djadmin docutils literal"><span class="pre">runserver</span></tt></a> and
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/django-admin/#django-admin-runfcgi"><tt class="xref std std-djadmin docutils literal"><span class="pre">runfcgi</span></tt></a> commands, read it from the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-WSGI_APPLICATION"><tt class="xref std std-setting docutils literal"><span class="pre">WSGI_APPLICATION</span></tt></a>
+setting. By default, it’s set to <tt class="docutils literal"><span class="pre">&lt;project_name&gt;.wsgi.application</span></tt>, which
+points to the <tt class="docutils literal"><span class="pre">application</span></tt> callable in <tt class="file docutils literal"><span class="pre">&lt;project_name&gt;/wsgi.py</span></tt>.</p>
+</div>
+<div class="section" id="s-configuring-the-settings-module">
+<span id="configuring-the-settings-module"></span><h2>Configuring the settings module<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#configuring-the-settings-module" title="Permalink to this headline">¶</a></h2>
+<p>When the WSGI server loads your application, Django needs to import the
+settings module — that’s where your entire application is defined.</p>
+<p>Django uses the <span class="target" id="index-0"></span><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/settings/#envvar-DJANGO_SETTINGS_MODULE"><tt class="xref std std-envvar docutils literal"><span class="pre">DJANGO_SETTINGS_MODULE</span></tt></a> environment variable to
+locate the appropriate settings module. It must contain the dotted path to the
+settings module. You can use a different value for development and production;
+it all depends on how you organize your settings.</p>
+<p>If this variable isn’t set, the default <tt class="file docutils literal"><span class="pre">wsgi.py</span></tt> sets it to
+<tt class="docutils literal"><span class="pre">mysite.settings</span></tt>, where <tt class="docutils literal"><span class="pre">mysite</span></tt> is the name of your project. That’s how
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/django-admin/#django-admin-runserver"><tt class="xref std std-djadmin docutils literal"><span class="pre">runserver</span></tt></a> discovers the default settings file by default.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Since environment variables are process-wide, this doesn’t work when you
+run multiple Django sites in the same process. This happens with mod_wsgi.</p>
+<p class="last">To avoid this problem, use mod_wsgi’s daemon mode with each site in its
+own daemon process, or override the value from the environment by
+enforcing <tt class="docutils literal"><span class="pre">os.environ["DJANGO_SETTINGS_MODULE"]</span> <span class="pre">=</span> <span class="pre">"mysite.settings"</span></tt> in
+your <tt class="file docutils literal"><span class="pre">wsgi.py</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="s-applying-wsgi-middleware">
+<span id="applying-wsgi-middleware"></span><h2>Applying WSGI middleware<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#applying-wsgi-middleware" title="Permalink to this headline">¶</a></h2>
+<p>To apply <a class="reference external" href="https://www.python.org/dev/peps/pep-3333/#middleware-components-that-play-both-sides">WSGI middleware</a> you can simply wrap the application object. For
+instance you could add these lines at the bottom of <tt class="file docutils literal"><span class="pre">wsgi.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">helloworld.wsgi</span> <span class="kn">import</span> <span class="n">HelloWorldApplication</span>
+<span class="n">application</span> <span class="o">=</span> <span class="n">HelloWorldApplication</span><span class="p">(</span><span class="n">application</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You could also replace the Django WSGI application with a custom WSGI
+application that later delegates to the Django WSGI application, if you want
+to combine a Django application with a WSGI application of another framework.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some third-party WSGI middleware do not call <tt class="docutils literal"><span class="pre">close</span></tt> on the response
+object after handling a request. In those cases the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/signals/#django.core.signals.request_finished" title="django.core.signals.request_finished"><tt class="xref py py-data docutils literal"><span class="pre">request_finished</span></tt></a> signal isn’t sent. This can
+result in idle connections to database and memcache servers.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/howto/deployment/"><i class="icon icon-chevron-left"></i> Deploying Django</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/modwsgi/">How to use Django with Apache and mod_wsgi <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./How to deploy with WSGI _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Michael Angeletti donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#">How to deploy with WSGI</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#the-application-object">The <tt class="docutils literal"><span class="pre">application</span></tt> object</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#configuring-the-settings-module">Configuring the settings module</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/#applying-wsgi-middleware">Applying WSGI middleware</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/howto/deployment/">Deploying Django</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/modwsgi/">How to use Django with Apache and mod_wsgi</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/howto/">“How-to” guides</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/howto/deployment/">Deploying Django</a>
+      
+      <ul><li>How to deploy with WSGI</li></ul>
+      </li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./How to deploy with WSGI _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://docs.djangoproject.com/en/1.8/topics/templates/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>Templates | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./Templates _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./Templates _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./Templates _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./Templates _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/topics/templates/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./Templates _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./Templates _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./Templates _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./Templates _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./Templates _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/topics/templates/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/topics/templates/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/topics/templates/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/topics/templates/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/topics/templates/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/topics/templates/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-module-django.template">
+<span id="s-templates"></span><span id="module-django.template"></span><span id="templates"></span><h1>Templates<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#module-django.template" title="Permalink to this headline">¶</a></h1>
+<p>Being a web framework, Django needs a convenient way to generate HTML
+dynamically. The most common approach relies on templates. A template contains
+the static parts of the desired HTML output as well as some special syntax
+describing how dynamic content will be inserted. For a hands-on example of
+creating HTML pages with templates, see <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/intro/tutorial03/"><em>Tutorial 3</em></a>.</p>
+<p>A Django project can be configured with one or several template engines (or
+even zero if you don’t use templates). Django ships built-in backends for its
+own template system, creatively called the Django template language (DTL), and
+for the popular alternative <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a>. Backends for other template languages may
+be available from third-parties.</p>
+<p>Django defines a standard API for loading and rendering templates regardless
+of the backend. Loading consists of finding the template for a given identifier
+and preprocessing it, usually compiling it to an in-memory representation.
+Rendering means interpolating the template with context data and returning the
+resulting string.</p>
+<p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/language/"><em>Django template language</em></a> is Django’s own
+template system. Until Django 1.8 it was the only built-in option available.
+It’s a good template library even though it’s fairly opinionated and sports a
+few idiosyncrasies. If you don’t have a pressing reason to choose another
+backend, you should use the DTL, especially if you’re writing a pluggable
+application and you intend to distribute templates. Django’s contrib apps that
+include templates, like <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/"><em>django.contrib.admin</em></a>,
+use the DTL.</p>
+<p>For historical reasons, both the generic support for template engines and the
+implementation of the Django template language live in the <tt class="docutils literal"><span class="pre">django.template</span></tt>
+namespace.</p>
+<div class="section" id="s-support-for-template-engines">
+<span id="s-template-engines"></span><span id="support-for-template-engines"></span><span id="template-engines"></span><h2>Support for template engines<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#support-for-template-engines" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<span class="title">New in Django 1.8:</span> <p>Support for multiple template engines and the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES"><tt class="xref std std-setting docutils literal"><span class="pre">TEMPLATES</span></tt></a> setting
+were added in Django 1.8.</p>
+</div>
+<div class="section" id="s-configuration">
+<span id="configuration"></span><h3>Configuration<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#configuration" title="Permalink to this headline">¶</a></h3>
+<p>Templates engines are configured with the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES"><tt class="xref std std-setting docutils literal"><span class="pre">TEMPLATES</span></tt></a> setting. It’s a
+list of configurations, one for each engine. The default value is empty. The
+<tt class="docutils literal"><span class="pre">settings.py</span></tt> generated by the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/django-admin/#django-admin-startproject"><tt class="xref std std-djadmin docutils literal"><span class="pre">startproject</span></tt></a> command defines a
+more useful value:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">'BACKEND'</span><span class="p">:</span> <span class="s">'django.template.backends.django.DjangoTemplates'</span><span class="p">,</span>
+        <span class="s">'DIRS'</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s">'APP_DIRS'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">'OPTIONS'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="c"># ... some options here ...</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-BACKEND"><tt class="xref std std-setting docutils literal"><span class="pre">BACKEND</span></tt></a> is a dotted Python path to a template
+engine class implementing Django’s template backend API. The built-in backends
+are <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.backends.django.DjangoTemplates" title="django.template.backends.django.DjangoTemplates"><tt class="xref py py-class docutils literal"><span class="pre">django.template.backends.django.DjangoTemplates</span></tt></a> and
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.backends.jinja2.Jinja2" title="django.template.backends.jinja2.Jinja2"><tt class="xref py py-class docutils literal"><span class="pre">django.template.backends.jinja2.Jinja2</span></tt></a>.</p>
+<p>Since most engines load templates from files, the top-level configuration for
+each engine contains two common settings:</p>
+<ul class="simple">
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">DIRS</span></tt></a> defines a list of directories where the
+engine should look for template source files, in search order.</li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-APP_DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">APP_DIRS</span></tt></a> tells whether the engine should
+look for templates inside installed applications. Each backend defines a
+conventional name for the subdirectory inside applications where its
+templates should be stored.</li>
+</ul>
+<p>While uncommon, it’s possible to configure several instances of the same
+backend with different options. In that case you should define a unique
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-NAME"><tt class="xref std std-setting docutils literal"><span class="pre">NAME</span></tt></a> for each engine.</p>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-OPTIONS"><tt class="xref std std-setting docutils literal"><span class="pre">OPTIONS</span></tt></a> contains backend-specific settings.</p>
+</div>
+<div class="section" id="s-usage">
+<span id="usage"></span><h3>Usage<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#usage" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-django.template.loader"><span id="template-loading"></span></span><p>The <tt class="docutils literal"><span class="pre">django.template.loader</span></tt> module defines two functions to load templates.</p>
+<dl class="function">
+<dt id="django.template.loader.get_template">
+<tt class="descname">get_template</tt>(<em>template_name</em>, <em>dirs=_dirs_undefined</em>, <em>using=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/template/loader/#get_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function loads the template with the given name and returns a
+<tt class="docutils literal"><span class="pre">Template</span></tt> object.</p>
+<p>The exact type of the return value depends on the backend that loaded the
+template. Each backend has its own <tt class="docutils literal"><span class="pre">Template</span></tt> class.</p>
+<p><tt class="docutils literal"><span class="pre">get_template()</span></tt> tries each template engine in order until one succeeds.
+If the template cannot be found, it raises
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.TemplateDoesNotExist" title="django.template.TemplateDoesNotExist"><tt class="xref py py-exc docutils literal"><span class="pre">TemplateDoesNotExist</span></tt></a>. If the template is found but
+contains invalid syntax, it raises
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.TemplateSyntaxError" title="django.template.TemplateSyntaxError"><tt class="xref py py-exc docutils literal"><span class="pre">TemplateSyntaxError</span></tt></a>.</p>
+<p>How templates are searched and loaded depends on each engine’s backend and
+configuration.</p>
+<p>If you want to restrict the search to a particular template engine, pass
+the engine’s <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-NAME"><tt class="xref std std-setting docutils literal"><span class="pre">NAME</span></tt></a> in the <tt class="docutils literal"><span class="pre">using</span></tt> argument.</p>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.7:</span> <p>The <tt class="docutils literal"><span class="pre">dirs</span></tt> parameter was added.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 1.8: </span>The <tt class="docutils literal"><span class="pre">dirs</span></tt> parameter was deprecated.</p>
+</div>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p>The <tt class="docutils literal"><span class="pre">using</span></tt> parameter was added.</p>
+</div>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p><tt class="docutils literal"><span class="pre">get_template()</span></tt> returns a backend-dependent <tt class="docutils literal"><span class="pre">Template</span></tt> instead
+of a <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Template" title="django.template.Template"><tt class="xref py py-class docutils literal"><span class="pre">django.template.Template</span></tt></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="django.template.loader.select_template">
+<tt class="descname">select_template</tt>(<em>template_name_list</em>, <em>dirs=_dirs_undefined</em>, <em>using=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/template/loader/#select_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.select_template" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">select_template()</span></tt> is just like <tt class="docutils literal"><span class="pre">get_template()</span></tt>, except it takes a
+list of template names. It tries each name in order and returns the first
+template that exists.</p>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.7:</span> <p>The <tt class="docutils literal"><span class="pre">dirs</span></tt> parameter was added.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 1.8: </span>The <tt class="docutils literal"><span class="pre">dirs</span></tt> parameter was deprecated.</p>
+</div>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p>The <tt class="docutils literal"><span class="pre">using</span></tt> parameter was added.</p>
+</div>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p><tt class="docutils literal"><span class="pre">select_template()</span></tt> returns a backend-dependent <tt class="docutils literal"><span class="pre">Template</span></tt> instead
+of a <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Template" title="django.template.Template"><tt class="xref py py-class docutils literal"><span class="pre">django.template.Template</span></tt></a>.</p>
+</div>
+</dd></dl>
+
+<p>If loading a template fails, the following two exceptions, defined in
+<tt class="docutils literal"><span class="pre">django.template</span></tt>, may be raised:</p>
+<dl class="exception">
+<dt id="django.template.TemplateDoesNotExist">
+<em class="property">exception </em><tt class="descname">TemplateDoesNotExist</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.TemplateDoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>This exception is raised when a template cannot be found.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="django.template.TemplateSyntaxError">
+<em class="property">exception </em><tt class="descname">TemplateSyntaxError</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.TemplateSyntaxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>This exception is raised when a template was found but contains errors.</p>
+</dd></dl>
+
+<p><tt class="docutils literal"><span class="pre">Template</span></tt> objects returned by <tt class="docutils literal"><span class="pre">get_template()</span></tt> and <tt class="docutils literal"><span class="pre">select_template()</span></tt>
+must provide a <tt class="docutils literal"><span class="pre">render()</span></tt> method with the following signature:</p>
+<dl class="method">
+<dt id="django.template.backends.base.Template.render">
+<tt class="descclassname">Template.</tt><tt class="descname">render</tt>(<em>context=None</em>, <em>request=None</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.backends.base.Template.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders this template with a given context.</p>
+<p>If <tt class="docutils literal"><span class="pre">context</span></tt> is provided, it must be a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a>. If it isn’t
+provided, the engine will render the template with an empty context.</p>
+<p>If <tt class="docutils literal"><span class="pre">request</span></tt> is provided, it must be an <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpRequest" title="django.http.HttpRequest"><tt class="xref py py-class docutils literal"><span class="pre">HttpRequest</span></tt></a>.
+Then the engine must make it, as well as the CSRF token, available in the
+template. How this is achieved is up to each backend.</p>
+</dd></dl>
+
+<p>Here’s an example of the search algorithm. For this example the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES"><tt class="xref std std-setting docutils literal"><span class="pre">TEMPLATES</span></tt></a> setting is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">'BACKEND'</span><span class="p">:</span> <span class="s">'django.template.backends.django.DjangoTemplates'</span><span class="p">,</span>
+        <span class="s">'DIRS'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s">'/home/html/example.com'</span><span class="p">,</span>
+            <span class="s">'/home/html/default'</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s">'BACKEND'</span><span class="p">:</span> <span class="s">'django.template.backends.jinja2.Jinja2'</span><span class="p">,</span>
+        <span class="s">'DIRS'</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s">'/home/html/jinja2'</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>If you call <tt class="docutils literal"><span class="pre">get_template('story_detail.html')</span></tt>, here are the files Django
+will look for, in order:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">/home/html/example.com/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/default/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/jinja2/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'jinja2'</span></tt> engine)</li>
+</ul>
+<p>If you call <tt class="docutils literal"><span class="pre">select_template(['story_253_detail.html',</span> <span class="pre">'story_detail.html'])</span></tt>,
+here’s what Django will look for:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">/home/html/example.com/story_253_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/default/story_253_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/jinja2/story_253_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'jinja2'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/example.com/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/default/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/jinja2/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'jinja2'</span></tt> engine)</li>
+</ul>
+<p>When Django finds a template that exists, it stops looking.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can use <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.select_template" title="django.template.loader.select_template"><tt class="xref py py-func docutils literal"><span class="pre">select_template()</span></tt></a> for flexible
+template loading. For example, if you’ve written a news story and want
+some stories to have custom templates, use something like
+<tt class="docutils literal"><span class="pre">select_template(['story_%s_detail.html'</span> <span class="pre">%</span> <span class="pre">story.id,</span>
+<span class="pre">'story_detail.html'])</span></tt>. That’ll allow you to use a custom template for an
+individual story, with a fallback template for stories that don’t have
+custom templates.</p>
+</div>
+<p>It’s possible – and preferable – to organize templates in subdirectories
+inside each directory containing templates. The convention is to make a
+subdirectory for each Django app, with subdirectories within those
+subdirectories as needed.</p>
+<p>Do this for your own sanity. Storing all templates in the root level of a
+single directory gets messy.</p>
+<p>To load a template that’s within a subdirectory, just use a slash, like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">get_template</span><span class="p">(</span><span class="s">'news/story_detail.html'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using the same <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES"><tt class="xref std std-setting docutils literal"><span class="pre">TEMPLATES</span></tt></a> option as above, this will attempt to load
+the following templates:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">/home/html/example.com/news/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/default/news/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'django'</span></tt> engine)</li>
+<li><tt class="docutils literal"><span class="pre">/home/html/jinja2/news/story_detail.html</span></tt> (<tt class="docutils literal"><span class="pre">'jinja2'</span></tt> engine)</li>
+</ul>
+<p>In addition, to cut down on the repetitive nature of loading and rendering
+templates, Django provides a shortcut function which automates the process.</p>
+<dl class="function">
+<dt id="django.template.loader.render_to_string">
+<tt class="descname">render_to_string</tt>(<em>template_name</em>, <em>context=None</em>, <em>context_instance=_context_instance_undefined</em>, <em>request=None</em>, <em>using=None</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/template/loader/#render_to_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.render_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">render_to_string()</span></tt> loads a template like <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.get_template" title="django.template.loader.get_template"><tt class="xref py py-func docutils literal"><span class="pre">get_template()</span></tt></a> and
+calls its <tt class="docutils literal"><span class="pre">render()</span></tt> method immediately. It takes the following
+arguments.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">template_name</span></tt></dt>
+<dd>The name of the template to load and render. If it’s a list of template
+names, Django uses <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.select_template" title="django.template.loader.select_template"><tt class="xref py py-func docutils literal"><span class="pre">select_template()</span></tt></a> instead of
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.get_template" title="django.template.loader.get_template"><tt class="xref py py-func docutils literal"><span class="pre">get_template()</span></tt></a> to find the template.</dd>
+<dt><tt class="docutils literal"><span class="pre">context</span></tt></dt>
+<dd><p class="first">A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a> to be used as the template’s context for rendering.</p>
+<div class="last versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p>The <tt class="docutils literal"><span class="pre">context</span></tt> argument used to be called <tt class="docutils literal"><span class="pre">dictionary</span></tt>. That name
+is deprecated in Django 1.8 and will be removed in Django 1.10.</p>
+<p><tt class="docutils literal"><span class="pre">context</span></tt> is now optional. An empty context will be used if it
+isn’t provided.</p>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">context_instance</span></tt></dt>
+<dd><p class="first">An instance of <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Context" title="django.template.Context"><tt class="xref py py-class docutils literal"><span class="pre">Context</span></tt></a> or a subclass (e.g., an
+instance of <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.RequestContext" title="django.template.RequestContext"><tt class="xref py py-class docutils literal"><span class="pre">RequestContext</span></tt></a>) to use as the
+template’s context.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Deprecated since version 1.8: </span>The <tt class="docutils literal"><span class="pre">context_instance</span></tt> argument is deprecated. Use <tt class="docutils literal"><span class="pre">context</span></tt> and
+if needed <tt class="docutils literal"><span class="pre">request</span></tt>.</p>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">request</span></tt></dt>
+<dd><p class="first">An optional <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpRequest" title="django.http.HttpRequest"><tt class="xref py py-class docutils literal"><span class="pre">HttpRequest</span></tt></a> that will be available
+during the template’s rendering process.</p>
+<div class="last versionadded">
+<span class="title">New in Django 1.8:</span> <p>The <tt class="docutils literal"><span class="pre">request</span></tt> argument was added.</p>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<p>See also the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/shortcuts/#django.shortcuts.render" title="django.shortcuts.render"><tt class="xref py py-func docutils literal"><span class="pre">render()</span></tt></a> and
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/http/shortcuts/#django.shortcuts.render_to_response" title="django.shortcuts.render_to_response"><tt class="xref py py-func docutils literal"><span class="pre">render_to_response()</span></tt></a> shortcuts, which call
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.render_to_string" title="django.template.loader.render_to_string"><tt class="xref py py-func docutils literal"><span class="pre">render_to_string()</span></tt></a> and feed the result into an
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpResponse" title="django.http.HttpResponse"><tt class="xref py py-class docutils literal"><span class="pre">HttpResponse</span></tt></a> suitable for returning from a view.</p>
+<p>Finally, you can use configured engines directly:</p>
+<dl class="data">
+<dt id="django.template.loader.engines">
+<tt class="descname">engines</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.loader.engines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Template engines are available in <tt class="docutils literal"><span class="pre">django.template.engines</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">engines</span>
+
+<span class="n">django_engine</span> <span class="o">=</span> <span class="n">engines</span><span class="p">[</span><span class="s">'django'</span><span class="p">]</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">django_engine</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="s">"Hello {{ name }}!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The lookup key — <tt class="docutils literal"><span class="pre">'django'</span></tt> in this example — is the engine’s
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-NAME"><tt class="xref std std-setting docutils literal"><span class="pre">NAME</span></tt></a>.</p>
+</dd></dl>
+
+<span class="target" id="module-django.template.backends"></span></div>
+<div class="section" id="s-module-django.template.backends.django">
+<span id="s-built-in-backends"></span><span id="module-django.template.backends.django"></span><span id="built-in-backends"></span><h3>Built-in backends<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#module-django.template.backends.django" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="django.template.backends.django.DjangoTemplates">
+<em class="property">class </em><tt class="descname">DjangoTemplates</tt><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/template/backends/django/#DjangoTemplates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.backends.django.DjangoTemplates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Set <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-BACKEND"><tt class="xref std std-setting docutils literal"><span class="pre">BACKEND</span></tt></a> to
+<tt class="docutils literal"><span class="pre">'django.template.backends.django.DjangoTemplates'</span></tt> to configure a Django
+template engine.</p>
+<p>When <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-APP_DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">APP_DIRS</span></tt></a> is <tt class="docutils literal"><span class="pre">True</span></tt>, <tt class="docutils literal"><span class="pre">DjangoTemplates</span></tt>
+engines look for templates in the <tt class="docutils literal"><span class="pre">templates</span></tt> subdirectory of installed
+applications. This generic name was kept for backwards-compatibility.</p>
+<p><tt class="docutils literal"><span class="pre">DjangoTemplates</span></tt> engines accept the following <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-OPTIONS"><tt class="xref std std-setting docutils literal"><span class="pre">OPTIONS</span></tt></a>:</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">'allowed_include_roots'</span></tt>: a list of strings representing allowed prefixes
+for the <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">ssi</span> <span class="pre">%}</span></tt> template tag. This is a security measure, so that
+template authors can’t access files that they shouldn’t be accessing.</p>
+<p>For example, if <tt class="docutils literal"><span class="pre">'allowed_include_roots'</span></tt> is <tt class="docutils literal"><span class="pre">['/home/html',</span>
+<span class="pre">'/var/www']</span></tt>, then <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">ssi</span> <span class="pre">/home/html/foo.txt</span> <span class="pre">%}</span></tt> would work, but <tt class="docutils literal"><span class="pre">{%</span>
+<span class="pre">ssi</span> <span class="pre">/etc/passwd</span> <span class="pre">%}</span></tt> wouldn’t.</p>
+<p>It defaults to an empty list.</p>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 1.8: </span><tt class="docutils literal"><span class="pre">allowed_include_roots</span></tt> is deprecated because the {% ssi %} tag is
+deprecated.</p>
+</div>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">'context_processors'</span></tt>: a list of dotted Python paths to callables that
+are used to populate the context when a template is rendered with a request.
+These callables take a request object as their argument and return a
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a> of items to be merged into the context.</p>
+<p>It defaults to an empty list.</p>
+<p>See <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.RequestContext" title="django.template.RequestContext"><tt class="xref py py-class docutils literal"><span class="pre">RequestContext</span></tt></a> for more information.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">'debug'</span></tt>: a boolean that turns on/off template debug mode. If it is
+<tt class="docutils literal"><span class="pre">True</span></tt>, the fancy error page will display a detailed report for any
+exception raised during template rendering. This report contains the
+relevant snippet of the template with the appropriate line highlighted.</p>
+<p>It defaults to the value of the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-DEBUG"><tt class="xref std std-setting docutils literal"><span class="pre">DEBUG</span></tt></a> setting.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">'loaders'</span></tt>: a list of dotted Python paths to template loader classes.
+Each <tt class="docutils literal"><span class="pre">Loader</span></tt> class knows how to import templates from a particular
+source. Optionally, a tuple can be used instead of a string. The first item
+in the tuple should be the <tt class="docutils literal"><span class="pre">Loader</span></tt> class name, and subsequent items are
+passed to the <tt class="docutils literal"><span class="pre">Loader</span></tt> during initialization.</p>
+<p>The default depends on the values of <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">DIRS</span></tt></a> and
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-APP_DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">APP_DIRS</span></tt></a>.</p>
+<p>See <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#template-loaders"><em>Loader types</em></a> for details.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">'string_if_invalid'</span></tt>: the output, as a string, that the template system
+should use for invalid (e.g. misspelled) variables.</p>
+<p>It defaults to an empty string.</p>
+<p>See <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#invalid-template-variables"><em>How invalid variables are handled</em></a> for details.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">'file_charset'</span></tt>: the charset used to read template files on disk.</p>
+<p>It defaults to the value of <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-FILE_CHARSET"><tt class="xref std std-setting docutils literal"><span class="pre">FILE_CHARSET</span></tt></a>.</p>
+</li>
+</ul>
+<span class="target" id="module-django.template.backends.jinja2"></span><dl class="class">
+<dt id="django.template.backends.jinja2.Jinja2">
+<em class="property">class </em><tt class="descname">Jinja2</tt><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/template/backends/jinja2/#Jinja2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.backends.jinja2.Jinja2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Requires <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a> to be installed:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> pip install Jinja2
+</pre></div>
+</div>
+<p>Set <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-BACKEND"><tt class="xref std std-setting docutils literal"><span class="pre">BACKEND</span></tt></a> to
+<tt class="docutils literal"><span class="pre">'django.template.backends.jinja2.Jinja2'</span></tt> to configure a <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a> engine.</p>
+<p>When <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-APP_DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">APP_DIRS</span></tt></a> is <tt class="docutils literal"><span class="pre">True</span></tt>, <tt class="docutils literal"><span class="pre">Jinja2</span></tt> engines
+look for templates in the <tt class="docutils literal"><span class="pre">jinja2</span></tt> subdirectory of installed applications.</p>
+<p>The most important entry in <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-OPTIONS"><tt class="xref std std-setting docutils literal"><span class="pre">OPTIONS</span></tt></a> is
+<tt class="docutils literal"><span class="pre">'environment'</span></tt>. It’s a dotted Python path to a callable returning a Jinja2
+environment. It defaults to <tt class="docutils literal"><span class="pre">'jinja2.Environment'</span></tt>. Django invokes that
+callable and passes other options as keyword arguments. Furthermore, Django
+adds defaults that differ from Jinja2’s for a few options:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">'autoescape'</span></tt>: <tt class="docutils literal"><span class="pre">True</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">'loader'</span></tt>: a loader configured for <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">DIRS</span></tt></a> and
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-TEMPLATES-APP_DIRS"><tt class="xref std std-setting docutils literal"><span class="pre">APP_DIRS</span></tt></a></li>
+<li><tt class="docutils literal"><span class="pre">'auto_reload'</span></tt>: <tt class="docutils literal"><span class="pre">settings.DEBUG</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">'undefined'</span></tt>: <tt class="docutils literal"><span class="pre">DebugUndefined</span> <span class="pre">if</span> <span class="pre">settings.DEBUG</span> <span class="pre">else</span> <span class="pre">Undefined</span></tt></li>
+</ul>
+<p>The default configuration is purposefully kept to a minimum. The <tt class="docutils literal"><span class="pre">Jinja2</span></tt>
+backend doesn’t create a Django-flavored environment. It doesn’t know about
+Django context processors, filters, and tags. In order to use Django-specific
+APIs, you must configure them into the environment.</p>
+<p>For example, you can create <tt class="docutils literal"><span class="pre">myproject/jinja2.py</span></tt> with this content:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>  <span class="c"># Python 2 only</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib.staticfiles.storage</span> <span class="kn">import</span> <span class="n">staticfiles_storage</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span>
+
+
+<span class="k">def</span> <span class="nf">environment</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">):</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">globals</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+        <span class="s">'static'</span><span class="p">:</span> <span class="n">staticfiles_storage</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+        <span class="s">'url'</span><span class="p">:</span> <span class="n">reverse</span><span class="p">,</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="n">env</span>
+</pre></div>
+</div>
+<p>and set the <tt class="docutils literal"><span class="pre">'environment'</span></tt> option to <tt class="docutils literal"><span class="pre">'myproject.jinja2.environment'</span></tt>.</p>
+<p>Then you could use the following constructs in Jinja2 templates:</p>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">static</span><span class="o">(</span><span class="s1">'path/to/company-logo.png'</span><span class="o">)</span> <span class="cp">}}</span><span class="s">"</span> <span class="na">alt=</span><span class="s">"Company Logo"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">url</span><span class="o">(</span><span class="s1">'admin:index'</span><span class="o">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>Administration<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+</div>
+<p>The concepts of tags and filters exist both in the Django template language
+and in Jinja2 but they’re used differently. Since Jinja2 supports passing
+arguments to callables in templates, many features that require a template tag
+or filter in Django templates can be achieved simply by calling a function in
+Jinja2 templates, as shown in the example above. Jinja2’s global namespace
+removes the need for template context processors. The Django template language
+doesn’t have an equivalent of Jinja2 tests.</p>
+</div>
+<div class="section" id="s-custom-backends">
+<span id="custom-backends"></span><h3>Custom backends<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#custom-backends" title="Permalink to this headline">¶</a></h3>
+<p>Here’s how to implement a custom template backend in order to use another
+template system. A template backend is a class that inherits
+<tt class="docutils literal"><span class="pre">django.template.backends.base.BaseEngine</span></tt>. It must implement
+<tt class="docutils literal"><span class="pre">get_template()</span></tt> and optionally <tt class="docutils literal"><span class="pre">from_string()</span></tt>. Here’s an example for a
+fictional <tt class="docutils literal"><span class="pre">foobar</span></tt> template library:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">TemplateDoesNotExist</span><span class="p">,</span> <span class="n">TemplateSyntaxError</span>
+<span class="kn">from</span> <span class="nn">django.template.backends.base</span> <span class="kn">import</span> <span class="n">BaseEngine</span>
+<span class="kn">from</span> <span class="nn">django.template.backends.utils</span> <span class="kn">import</span> <span class="n">csrf_input_lazy</span><span class="p">,</span> <span class="n">csrf_token_lazy</span>
+
+<span class="kn">import</span> <span class="nn">foobar</span>
+
+
+<span class="k">class</span> <span class="nc">FooBar</span><span class="p">(</span><span class="n">BaseEngine</span><span class="p">):</span>
+
+    <span class="c"># Name of the subdirectory containing the templates for this engine</span>
+    <span class="c"># inside an installed application.</span>
+    <span class="n">app_dirname</span> <span class="o">=</span> <span class="s">'foobar'</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'OPTIONS'</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FooBar</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">foobar</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_code</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="k">return</span> <span class="n">Template</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">template_code</span><span class="p">))</span>
+        <span class="k">except</span> <span class="n">foobar</span><span class="o">.</span><span class="n">TemplateCompilationFailed</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TemplateSyntaxError</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_name</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Template</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">template_name</span><span class="p">))</span>
+        <span class="k">except</span> <span class="n">foobar</span><span class="o">.</span><span class="n">TemplateNotFound</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TemplateDoesNotExist</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">foobar</span><span class="o">.</span><span class="n">TemplateCompilationFailed</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TemplateSyntaxError</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Template</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">template</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">request</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">context</span><span class="p">[</span><span class="s">'request'</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span>
+            <span class="n">context</span><span class="p">[</span><span class="s">'csrf_input'</span><span class="p">]</span> <span class="o">=</span> <span class="n">csrf_input_lazy</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+            <span class="n">context</span><span class="p">[</span><span class="s">'csrf_token'</span><span class="p">]</span> <span class="o">=</span> <span class="n">csrf_token_lazy</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://github.com/django/deps/blob/master/accepted/0182-multiple-template-engines.rst">DEP 182</a> for more information.</p>
+</div>
+</div>
+<div class="section" id="s-the-django-template-language">
+<span id="s-template-language-intro"></span><span id="the-django-template-language"></span><span id="template-language-intro"></span><h2>The Django template language<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#the-django-template-language" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="s-syntax">
+<span id="syntax"></span><h3>Syntax<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#syntax" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-about-this-section admonition">
+<p class="first admonition-title">About this section</p>
+<p class="last">This is an overview of the Django template language’s syntax. For details
+see the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/language/"><em>language syntax reference</em></a>.</p>
+</div>
+<p>A Django template is simply a text document or a Python string marked-up using
+the Django template language. Some constructs are recognized and interpreted
+by the template engine. The main ones are variables and tags.</p>
+<p>A template is rendered with a context. Rendering replaces variables with their
+values, which are looked up in the context, and executes tags. Everything else
+is output as is.</p>
+<p>The syntax of the Django template language involves four constructs.</p>
+<div class="section" id="s-variables">
+<span id="variables"></span><h4>Variables<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#variables" title="Permalink to this headline">¶</a></h4>
+<p>A variable outputs a value from the context, which is a dict-like object
+mapping keys to values.</p>
+<p>Variables are surrounded by <tt class="docutils literal"><span class="pre">{{</span></tt> and <tt class="docutils literal"><span class="pre">}}</span></tt> like this:</p>
+<div class="highlight-html+django"><div class="highlight"><pre>My first name is <span class="cp">{{</span> <span class="nv">first_name</span> <span class="cp">}}</span>. My last name is <span class="cp">{{</span> <span class="nv">last_name</span> <span class="cp">}}</span>.
+</pre></div>
+</div>
+<p>With a context of <tt class="docutils literal"><span class="pre">{'first_name':</span> <span class="pre">'John',</span> <span class="pre">'last_name':</span> <span class="pre">'Doe'}</span></tt>, this
+template renders to:</p>
+<div class="highlight-html+django"><div class="highlight"><pre>My first name is John. My last name is Doe.
+</pre></div>
+</div>
+<p>Dictionary lookup, attribute lookup and list-index lookups are implemented
+with a dot notation:</p>
+<div class="highlight-html+django"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">my_dict.key</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="nv">my_object.attribute</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="nv">my_list.0</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<p>If a variable resolves to a callable, the template system will call it with no
+arguments and use its result instead of the callable.</p>
+</div>
+<div class="section" id="s-tags">
+<span id="tags"></span><h4>Tags<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#tags" title="Permalink to this headline">¶</a></h4>
+<p>Tags provide arbitrary logic in the rendering process.</p>
+<p>This definition is deliberately vague. For example, a tag can output content,
+serve as a control structure e.g. an “if” statement or a “for” loop, grab
+content from a database, or even enable access to other template tags.</p>
+<p>Tags are surrounded by <tt class="docutils literal"><span class="pre">{%</span></tt> and <tt class="docutils literal"><span class="pre">%}</span></tt> like this:</p>
+<div class="highlight-html+django"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">csrf_token</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Most tags accept arguments:</p>
+<div class="highlight-html+django"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">'odd'</span> <span class="s1">'even'</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Some tags require beginning and ending tags:</p>
+<div class="highlight-html+django"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">user.is_authenticated</span> <span class="cp">%}</span>Hello, <span class="cp">{{</span> <span class="nv">user.username</span> <span class="cp">}}</span>.<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>A <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#ref-templates-builtins-tags"><em>reference of built-in tags</em></a> is
+available as well as <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#howto-writing-custom-template-tags"><em>instructions for writing custom tags</em></a>.</p>
+</div>
+<div class="section" id="s-filters">
+<span id="filters"></span><h4>Filters<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#filters" title="Permalink to this headline">¶</a></h4>
+<p>Filters transform the values of variables and tag arguments.</p>
+<p>They look like this:</p>
+<div class="highlight-html+django"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">django</span><span class="o">|</span><span class="nf">title</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<p>With a context of <tt class="docutils literal"><span class="pre">{'django':</span> <span class="pre">'the</span> <span class="pre">web</span> <span class="pre">framework</span> <span class="pre">for</span> <span class="pre">perfectionists</span> <span class="pre">with</span>
+<span class="pre">deadlines'}</span></tt>, this template renders to:</p>
+<div class="highlight-html+django"><div class="highlight"><pre>The Web Framework For Perfectionists With Deadlines
+</pre></div>
+</div>
+<p>Some filters take an argument:</p>
+<div class="highlight-html+django"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">my_date</span><span class="o">|</span><span class="nf">date</span><span class="s2">:"Y-m-d"</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<p>A <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#ref-templates-builtins-filters"><em>reference of built-in filters</em></a> is
+available as well as <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#howto-writing-custom-template-filters"><em>instructions for writing custom filters</em></a>.</p>
+</div>
+<div class="section" id="s-comments">
+<span id="comments"></span><h4>Comments<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#comments" title="Permalink to this headline">¶</a></h4>
+<p>Comments look like this:</p>
+<div class="highlight-html+django"><div class="highlight"><pre><span class="c">{# this won't be rendered #}</span>
+</pre></div>
+</div>
+<p>A <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#std:templatetag-comment"><tt class="xref std std-ttag docutils literal"><span class="pre">{%</span> <span class="pre">comment</span> <span class="pre">%}</span></tt></a> tag provides multi-line comments.</p>
+</div>
+</div>
+<div class="section" id="s-components">
+<span id="components"></span><h3>Components<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#components" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-about-this-section admonition">
+<p class="first admonition-title">About this section</p>
+<p class="last">This is an overview of the Django template language’s APIs. For details
+see the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/"><em>API reference</em></a>.</p>
+</div>
+<div class="section" id="s-engine">
+<span id="engine"></span><h4>Engine<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#engine" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Engine" title="django.template.Engine"><tt class="xref py py-class docutils literal"><span class="pre">django.template.Engine</span></tt></a> encapsulates an instance of the Django
+template system. The main reason for instantiating an
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Engine" title="django.template.Engine"><tt class="xref py py-class docutils literal"><span class="pre">Engine</span></tt></a> directly is to use the Django template
+language outside of a Django project.</p>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#django.template.backends.django.DjangoTemplates" title="django.template.backends.django.DjangoTemplates"><tt class="xref py py-class docutils literal"><span class="pre">django.template.backends.django.DjangoTemplates</span></tt></a> is a thin wrapper
+adapting <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Engine" title="django.template.Engine"><tt class="xref py py-class docutils literal"><span class="pre">django.template.Engine</span></tt></a> to Django’s template backend API.</p>
+</div>
+<div class="section" id="s-template">
+<span id="template"></span><h4>Template<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#template" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Template" title="django.template.Template"><tt class="xref py py-class docutils literal"><span class="pre">django.template.Template</span></tt></a> represents a compiled template.
+Templates are obtained with <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Engine.get_template" title="django.template.Engine.get_template"><tt class="xref py py-meth docutils literal"><span class="pre">Engine.get_template()</span></tt></a> or <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Engine.from_string" title="django.template.Engine.from_string"><tt class="xref py py-meth docutils literal"><span class="pre">Engine.from_string()</span></tt></a></p>
+<p>Likewise <tt class="docutils literal"><span class="pre">django.template.backends.django.Template</span></tt> is a thin wrapper
+adapting <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Template" title="django.template.Template"><tt class="xref py py-class docutils literal"><span class="pre">django.template.Template</span></tt></a> to the common template API.</p>
+</div>
+<div class="section" id="s-context">
+<span id="context"></span><h4>Context<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#context" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Context" title="django.template.Context"><tt class="xref py py-class docutils literal"><span class="pre">django.template.Context</span></tt></a> holds some metadata in addition to the
+context data. It is passed to <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Template.render" title="django.template.Template.render"><tt class="xref py py-meth docutils literal"><span class="pre">Template.render()</span></tt></a> for rendering a template.</p>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.RequestContext" title="django.template.RequestContext"><tt class="xref py py-class docutils literal"><span class="pre">django.template.RequestContext</span></tt></a> is a subclass of
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Context" title="django.template.Context"><tt class="xref py py-class docutils literal"><span class="pre">Context</span></tt></a> that stores the current
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpRequest" title="django.http.HttpRequest"><tt class="xref py py-class docutils literal"><span class="pre">HttpRequest</span></tt></a> and runs template context processors.</p>
+<p>The common API doesn’t have an equivalent concept. Context data is passed in a
+plain <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a> and the current <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpRequest" title="django.http.HttpRequest"><tt class="xref py py-class docutils literal"><span class="pre">HttpRequest</span></tt></a> is passed
+separately if needed.</p>
+</div>
+<div class="section" id="s-loaders">
+<span id="loaders"></span><h4>Loaders<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#loaders" title="Permalink to this headline">¶</a></h4>
+<p>Template loaders are responsible for locating templates, loading them, and
+returning <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#django.template.Template" title="django.template.Template"><tt class="xref py py-class docutils literal"><span class="pre">Template</span></tt></a> objects.</p>
+<p>Django provides several <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#template-loaders"><em>built-in template loaders</em></a>
+and supports <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#custom-template-loaders"><em>custom template loaders</em></a>.</p>
+</div>
+<div class="section" id="s-context-processors">
+<span id="context-processors"></span><h4>Context processors<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/topics/templates/#context-processors" title="Permalink to this headline">¶</a></h4>
+<p>Context processors are functions that receive the current
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/request-response/#django.http.HttpRequest" title="django.http.HttpRequest"><tt class="xref py py-class docutils literal"><span class="pre">HttpRequest</span></tt></a> as an argument and return a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a> of
+data to be added to the rendering context.</p>
+<p>Their main use is to add common data shared by all templates to the context
+without repeating code in every view.</p>
+<p>Django provides many <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#context-processors"><em>built-in context processors</em></a>.
+Implementing a custom context processor is as simple as defining a function.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/topics/forms/media/"><i class="icon icon-chevron-left"></i> Form Assets (the <tt class="docutils literal"><span class="pre">Media</span></tt> class)</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/topics/class-based-views/">Class-based views <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/topics/templates/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./Templates _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          hellysmile donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#">Templates</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#support-for-template-engines">Support for template engines</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#configuration">Configuration</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#usage">Usage</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#module-django.template.backends.django">Built-in backends</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#custom-backends">Custom backends</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#the-django-template-language">The Django template language</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#syntax">Syntax</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#variables">Variables</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#tags">Tags</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#filters">Filters</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#comments">Comments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#components">Components</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#engine">Engine</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#template">Template</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#context">Context</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#loaders">Loaders</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/topics/templates/#context-processors">Context processors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/topics/forms/media/">Form Assets (the <tt class="docutils literal"><span class="pre">Media</span></tt> class)</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/topics/class-based-views/">Class-based views</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/topics/">Using Django</a>
+      
+      <ul><li>Templates</li></ul>
+      </li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./Templates _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

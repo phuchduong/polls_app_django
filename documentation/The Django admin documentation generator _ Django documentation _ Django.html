@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>The Django admin documentation generator | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./The Django admin documentation generator _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./The Django admin documentation generator _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./The Django admin documentation generator _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./The Django admin documentation generator _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/admindocs/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./The Django admin documentation generator _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./The Django admin documentation generator _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./The Django admin documentation generator _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./The Django admin documentation generator _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./The Django admin documentation generator _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/ref/contrib/admin/admindocs/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/ref/contrib/admin/admindocs/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/ref/contrib/admin/admindocs/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/ref/contrib/admin/admindocs/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/ref/contrib/admin/admindocs/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/ref/contrib/admin/admindocs/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-module-django.contrib.admindocs">
+<span id="s-the-django-admin-documentation-generator"></span><span id="module-django.contrib.admindocs"></span><span id="the-django-admin-documentation-generator"></span><h1>The Django admin documentation generator<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#module-django.contrib.admindocs" title="Permalink to this headline">¶</a></h1>
+<p>Django’s <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#module-django.contrib.admindocs" title="django.contrib.admindocs: Django&#39;s admin documentation generator."><tt class="xref py py-mod docutils literal"><span class="pre">admindocs</span></tt></a> app pulls documentation from the
+docstrings of models, views, template tags, and template filters for any app in
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-INSTALLED_APPS"><tt class="xref std std-setting docutils literal"><span class="pre">INSTALLED_APPS</span></tt></a> and makes that documentation available from the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/#module-django.contrib.admin" title="django.contrib.admin: Django&#39;s admin site."><tt class="xref py py-mod docutils literal"><span class="pre">Django</span> <span class="pre">admin</span></tt></a>.</p>
+<p>You may, to some extent, utilize <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#module-django.contrib.admindocs" title="django.contrib.admindocs: Django&#39;s admin documentation generator."><tt class="xref py py-mod docutils literal"><span class="pre">admindocs</span></tt></a> to quickly
+document your own code. This has limited usage, however, as the app is
+primarily intended for documenting templates, template tags, and filters.
+For example, model methods that require arguments are purposefully omitted
+from the documentation because they can’t be invoked from templates. The app
+can still be useful since it doesn’t require you to write any extra
+documentation (besides docstrings) and is conveniently available from the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/#module-django.contrib.admin" title="django.contrib.admin: Django&#39;s admin site."><tt class="xref py py-mod docutils literal"><span class="pre">Django</span> <span class="pre">admin</span></tt></a>.</p>
+<div class="section" id="s-overview">
+<span id="overview"></span><h2>Overview<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#overview" title="Permalink to this headline">¶</a></h2>
+<p>To activate the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#module-django.contrib.admindocs" title="django.contrib.admindocs: Django&#39;s admin documentation generator."><tt class="xref py py-mod docutils literal"><span class="pre">admindocs</span></tt></a>, you will need to do
+the following:</p>
+<ul class="simple">
+<li>Add <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#module-django.contrib.admindocs" title="django.contrib.admindocs: Django&#39;s admin documentation generator."><tt class="xref py py-mod docutils literal"><span class="pre">django.contrib.admindocs</span></tt></a> to your <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-INSTALLED_APPS"><tt class="xref std std-setting docutils literal"><span class="pre">INSTALLED_APPS</span></tt></a>.</li>
+<li>Add <tt class="docutils literal"><span class="pre">url(r'^admin/doc/',</span> <span class="pre">include('django.contrib.admindocs.urls'))</span></tt> to
+your <tt class="docutils literal"><span class="pre">urlpatterns</span></tt>. Make sure it’s included <em>before</em> the
+<tt class="docutils literal"><span class="pre">r'^admin/'</span></tt> entry, so that requests to <tt class="docutils literal"><span class="pre">/admin/doc/</span></tt> don’t get
+handled by the latter entry.</li>
+<li>Install the docutils Python module (<a class="reference external" href="http://docutils.sf.net/">http://docutils.sf.net/</a>).</li>
+<li><strong>Optional:</strong> Using the admindocs bookmarklets requires
+<tt class="docutils literal"><span class="pre">django.contrib.admindocs.middleware.XViewMiddleware</span></tt> to be installed.</li>
+</ul>
+<p>Once those steps are complete, you can start browsing the documentation by
+going to your admin interface and clicking the “Documentation” link in the
+upper right of the page.</p>
+</div>
+<div class="section" id="s-documentation-helpers">
+<span id="documentation-helpers"></span><h2>Documentation helpers<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#documentation-helpers" title="Permalink to this headline">¶</a></h2>
+<p>The following special markup can be used in your docstrings to easily create
+hyperlinks to other components:</p>
+<table class="docutils">
+<colgroup>
+<col width="31%">
+<col width="69%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Django Component</th>
+<th class="head">reStructuredText roles</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Models</td>
+<td><tt class="docutils literal"><span class="pre">:model:`app_label.ModelName`</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Views</td>
+<td><tt class="docutils literal"><span class="pre">:view:`app_label.view_name`</span></tt></td>
+</tr>
+<tr class="row-even"><td>Template tags</td>
+<td><tt class="docutils literal"><span class="pre">:tag:`tagname`</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Template filters</td>
+<td><tt class="docutils literal"><span class="pre">:filter:`filtername`</span></tt></td>
+</tr>
+<tr class="row-even"><td>Templates</td>
+<td><tt class="docutils literal"><span class="pre">:template:`path/to/template.html`</span></tt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s-model-reference">
+<span id="model-reference"></span><h2>Model reference<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#model-reference" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>models</strong> section of the <tt class="docutils literal"><span class="pre">admindocs</span></tt> page describes each model in the
+system along with all the fields and methods (without any arguments) available
+on it. While model properties don’t have any arguments, they are not listed.
+Relationships to other models appear as hyperlinks. Descriptions are pulled
+from <tt class="docutils literal"><span class="pre">help_text</span></tt> attributes on fields or from docstrings on model methods.</p>
+<p>A model with useful documentation might look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlogEntry</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Stores a single blog entry, related to :model:`blog.Blog` and</span>
+<span class="sd">    :model:`auth.User`.</span>
+
+<span class="sd">    """</span>
+    <span class="n">slug</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">SlugField</span><span class="p">(</span><span class="n">help_text</span><span class="o">=</span><span class="s">"A short label, generally used in URLs."</span><span class="p">)</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+    <span class="n">blog</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Blog</span><span class="p">)</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""Makes the blog entry live on the site."""</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="s-view-reference">
+<span id="view-reference"></span><h2>View reference<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#view-reference" title="Permalink to this headline">¶</a></h2>
+<p>Each URL in your site has a separate entry in the <tt class="docutils literal"><span class="pre">admindocs</span></tt> page, and
+clicking on a given URL will show you the corresponding view. Helpful things
+you can document in your view function docstrings include:</p>
+<ul class="simple">
+<li>A short description of what the view does.</li>
+<li>The <strong>context</strong>, or a list of variables available in the view’s template.</li>
+<li>The name of the template or templates that are used for that view.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+
+<span class="kn">from</span> <span class="nn">myapp.models</span> <span class="kn">import</span> <span class="n">MyModel</span>
+
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">slug</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Display an individual :model:`myapp.MyModel`.</span>
+
+<span class="sd">    **Context**</span>
+
+<span class="sd">    ``mymodel``</span>
+<span class="sd">        An instance of :model:`myapp.MyModel`.</span>
+
+<span class="sd">    **Template:**</span>
+
+<span class="sd">    :template:`myapp/my_template.html`</span>
+
+<span class="sd">    """</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">'mymodel'</span><span class="p">:</span> <span class="n">MyModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">slug</span><span class="o">=</span><span class="n">slug</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'myapp/my_template.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="s-template-tags-and-filters-reference">
+<span id="template-tags-and-filters-reference"></span><h2>Template tags and filters reference<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#template-tags-and-filters-reference" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>tags</strong> and <strong>filters</strong> <tt class="docutils literal"><span class="pre">admindocs</span></tt> sections describe all the tags and
+filters that come with Django (in fact, the <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#ref-templates-builtins-tags"><em>built-in tag reference</em></a> and <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#ref-templates-builtins-filters"><em>built-in filter reference</em></a> documentation come directly from those
+pages). Any tags or filters that you create or are added by a third-party app
+will show up in these sections as well.</p>
+</div>
+<div class="section" id="s-template-reference">
+<span id="template-reference"></span><h2>Template reference<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#template-reference" title="Permalink to this headline">¶</a></h2>
+<p>While <tt class="docutils literal"><span class="pre">admindocs</span></tt> does not include a place to document templates by
+themselves, if you use the <tt class="docutils literal"><span class="pre">:template:`path/to/template.html`</span></tt> syntax in a
+docstring the resulting page will verify the path of that template with
+Django’s <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/templates/api/#template-loaders"><em>template loaders</em></a>. This can be a handy way to
+check if the specified template exists and to show where on the filesystem that
+template is stored.</p>
+</div>
+<div class="section" id="s-included-bookmarklets">
+<span id="s-admindocs-bookmarklets"></span><span id="included-bookmarklets"></span><span id="admindocs-bookmarklets"></span><h2>Included Bookmarklets<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#included-bookmarklets" title="Permalink to this headline">¶</a></h2>
+<p>Several useful bookmarklets are available from the <tt class="docutils literal"><span class="pre">admindocs</span></tt> page:</p>
+<dl class="docutils">
+<dt>Documentation for this page</dt>
+<dd>Jumps you from any page to the documentation for the view that generates
+that page.</dd>
+<dt>Show object ID</dt>
+<dd>Shows the content-type and unique ID for pages that represent a single
+object.</dd>
+<dt>Edit this object</dt>
+<dd>Jumps to the admin page for pages that represent a single object.</dd>
+</dl>
+<p>Using these bookmarklets requires that you are either logged into the
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/#module-django.contrib.admin" title="django.contrib.admin: Django&#39;s admin site."><tt class="xref py py-mod docutils literal"><span class="pre">Django</span> <span class="pre">admin</span></tt></a> as a
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/auth/#django.contrib.auth.models.User" title="django.contrib.auth.models.User"><tt class="xref py py-class docutils literal"><span class="pre">User</span></tt></a> with
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/auth/#django.contrib.auth.models.User.is_staff" title="django.contrib.auth.models.User.is_staff"><tt class="xref py py-attr docutils literal"><span class="pre">is_staff</span></tt></a> set to <tt class="docutils literal"><span class="pre">True</span></tt>, or that the
+<tt class="docutils literal"><span class="pre">XViewMiddleware</span></tt> is installed and you are accessing the site from an IP
+address listed in <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-INTERNAL_IPS"><tt class="xref std std-setting docutils literal"><span class="pre">INTERNAL_IPS</span></tt></a>.</p>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/actions/"><i class="icon icon-chevron-left"></i> Admin actions</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/ref/contrib/auth/"><tt class="docutils literal"><span class="pre">django.contrib.auth</span></tt> <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./The Django admin documentation generator _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Gediminas Zlatkus donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#">The Django admin documentation generator</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#overview">Overview</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#documentation-helpers">Documentation helpers</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#model-reference">Model reference</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#view-reference">View reference</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#template-tags-and-filters-reference">Template tags and filters reference</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#template-reference">Template reference</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/admindocs/#included-bookmarklets">Included Bookmarklets</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/actions/">Admin actions</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/auth/"><tt class="docutils literal"><span class="pre">django.contrib.auth</span></tt></a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/">API Reference</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/contrib/"><tt class="docutils literal"><span class="pre">contrib</span></tt> packages</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/">The Django admin site</a>
+      
+      <ul><li>The Django admin documentation generator</li></ul>
+      </li></ul></li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./The Django admin documentation generator _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>

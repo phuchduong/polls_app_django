@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://docs.djangoproject.com/en/1.8/ref/files/file/ -->
+<html lang="en" class=" mdzr-js mdzr-borderradius mdzr-boxshadow mdzr-cssanimations mdzr-svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="ALL">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="Copyright" content="Django Software Foundation">
+    <meta name="keywords" content="Python, Django, framework, open-source">
+    <meta name="description" content="">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="icon" sizes="192x192" href="https://docs.djangoproject.com/s/img/icon-touch.e4872c4da341.png">
+    <link rel="shortcut icon" href="https://docs.djangoproject.com/s/img/favicon.6dbf28c0650e.ico">
+    <meta name="msapplication-TileColor" content="#113228">
+    <meta name="msapplication-TileImage" content="/s/img/icon-tile.b01ac0ef9f67.png">
+
+    <title>The File object | Django documentation | Django</title>
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/s/css/output-ie.02a0f90a8359.css" >
+     <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="./The File object _ Django documentation _ Django_files/output.5c6820f19a51.css">
+    <!--<![endif]-->
+    <script src="./The File object _ Django documentation _ Django_files/webfontloader.e75218f5f090.js"></script><style type="text/css"></style>
+    <link rel="stylesheet" href="./The File object _ Django documentation _ Django_files/css"><script>
+    WebFont.load({
+      custom: {
+        families: ['FontAwesome', 'Fira+Mono'],
+      },
+      google: {
+        families: ['Roboto:400italic,700italic,300,700,400:latin'
+        ]
+      },
+      classes: false,
+      events: false,
+      timeout: 1000
+    });
+    </script>
+    <script src="./The File object _ Django documentation _ Django_files/modernizr.3b36762e418a.js"></script>
+    
+  
+  <link rel="canonical" href="https://docs.djangoproject.com/en/stable/ref/files/file/">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://docs.djangoproject.com/en/1.8/search/description/" title="Django documentation">
+
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main.5702773eb28f" src="./The File object _ Django documentation _ Django_files/main.5702773eb28f.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/mobile-menu" src="./The File object _ Django documentation _ Django_files/mobile-menu.6403495515c4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/version-switcher" src="./The File object _ Django documentation _ Django_files/version-switcher.53940d7aff91.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mod/search-key" src="./The File object _ Django documentation _ Django_files/search-key.ed6a6a216ce6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./The File object _ Django documentation _ Django_files/jquery.min.87e69028f78d.js"></script></head>
+
+  <body id="generic" class="">
+
+    <div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">The web framework for perfectionists with deadlines.</p>
+    <div class="menu-button"><i class="icon icon-reorder"></i><span>Menu</span></div><div role="navigation" class="nav-menu-on">
+      <ul>
+        <li>
+          <a href="https://www.djangoproject.com/start/overview/">Overview</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/download/">Download</a>
+        </li>
+        <li class="active">
+          <a href="https://docs.djangoproject.com/">Documentation</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/weblog/">News</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/community/">Community</a>
+        </li>
+        <li>
+          <a href="https://code.djangoproject.com/">Code</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/foundation/">About</a>
+        </li>
+        <li>
+          <a href="https://www.djangoproject.com/fundraising/">♥ Donate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="copy-banner">
+      <div class="container">
+        
+  <h1><a href="https://docs.djangoproject.com/en/1.8/">Documentation</a></h1>
+
+      </div>
+    </div>
+    <div id="billboard"></div>
+
+    <div class="container sidebar-right">
+      <div role="main">
+        
+
+<ul id="doc-versions" class="version-switcher">
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.4/ref/files/file/">1.4</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.5/ref/files/file/">1.5</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.6/ref/files/file/">1.6</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.7/ref/files/file/">1.7</a>
+    
+  </li>
+  
+  
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/1.9/ref/files/file/">1.9</a>
+    
+  </li>
+  
+  
+  
+  <li class="other">
+    
+    <a href="https://docs.djangoproject.com/en/dev/ref/files/file/">dev</a>
+    
+  </li>
+  
+  
+  <li class="current" title="This document describes Django 1.8. Click on the links on the left to see other versions.">
+  <span>Documentation version:
+    <strong>1.8
+      </strong>
+    </span>
+  </li>
+</ul>
+
+
+<div id="docs-content">
+<div class="section" id="s-the-file-object">
+<span id="the-file-object"></span><h1>The <tt class="docutils literal"><span class="pre">File</span></tt> object<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#the-file-object" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/#module-django.core.files" title="django.core.files: File handling and storage"><tt class="xref py py-mod docutils literal"><span class="pre">django.core.files</span></tt></a> module and its submodules contain built-in classes
+for basic file handling in Django.</p>
+<div class="section" id="s-the-file-class">
+<span id="the-file-class"></span><h2>The <tt class="docutils literal"><span class="pre">File</span></tt> Class<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#the-file-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="django.core.files.File">
+<em class="property">class </em><tt class="descname">File</tt>(<em>file_object</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a> class is a thin wrapper around a Python
+<a class="reference external" href="https://docs.python.org/3/glossary.html#term-file-object" title="(in Python v3.5)"><em class="xref std std-term">file object</em></a> with some Django-specific additions.
+Internally, Django uses this class when it needs to represent a file.</p>
+<p><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a> objects have the following attributes and methods:</p>
+<dl class="attribute">
+<dt id="django.core.files.File.name">
+<tt class="descname">name</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the file including the relative path from
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-MEDIA_ROOT"><tt class="xref std std-setting docutils literal"><span class="pre">MEDIA_ROOT</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.core.files.File.size">
+<tt class="descname">size</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size of the file in bytes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.core.files.File.file">
+<tt class="descname">file</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.file" title="Permalink to this definition">¶</a></dt>
+<dd><p>The underlying <a class="reference external" href="https://docs.python.org/3/glossary.html#term-file-object" title="(in Python v3.5)"><em class="xref std std-term">file object</em></a> that this class wraps.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.core.files.File.mode">
+<tt class="descname">mode</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The read/write mode for the file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.open">
+<tt class="descname">open</tt>(<em>mode=None</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open or reopen the file (which also does <tt class="docutils literal"><span class="pre">File.seek(0)</span></tt>).
+The <tt class="docutils literal"><span class="pre">mode</span></tt> argument allows the same values
+as Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/functions.html#open" title="(in Python v3.5)"><tt class="docutils literal"><span class="pre">open()</span></tt></a>.</p>
+<p>When reopening a file, <tt class="docutils literal"><span class="pre">mode</span></tt> will override whatever mode the file
+was originally opened with; <tt class="docutils literal"><span class="pre">None</span></tt> means to reopen with the original
+mode.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.read">
+<tt class="descname">read</tt>(<em>num_bytes=None</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read content from the file. The optional <tt class="docutils literal"><span class="pre">size</span></tt> is the number of
+bytes to read; if not specified, the file will be read to the end.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.__iter__">
+<tt class="descname">__iter__</tt>()<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over the file yielding one line at a time.</p>
+<div class="versionchanged">
+<span class="title">Changed in Django 1.8:</span> <p><tt class="docutils literal"><span class="pre">File</span></tt> now uses <a class="reference external" href="https://www.python.org/dev/peps/pep-0278">universal newlines</a>. The following are
+recognized as ending a line: the Unix end-of-line convention
+<tt class="docutils literal"><span class="pre">'\n'</span></tt>, the Windows convention <tt class="docutils literal"><span class="pre">'\r\n'</span></tt>, and the old Macintosh
+convention <tt class="docutils literal"><span class="pre">'\r'</span></tt>.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.chunks">
+<tt class="descname">chunks</tt>(<em>chunk_size=None</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over the file yielding “chunks” of a given size. <tt class="docutils literal"><span class="pre">chunk_size</span></tt>
+defaults to 64 KB.</p>
+<p>This is especially useful with very large files since it allows them to
+be streamed off disk and avoids storing the whole file in memory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.multiple_chunks">
+<tt class="descname">multiple_chunks</tt>(<em>chunk_size=None</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.multiple_chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="docutils literal"><span class="pre">True</span></tt> if the file is large enough to require multiple chunks
+to access all of its content give some <tt class="docutils literal"><span class="pre">chunk_size</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.write">
+<tt class="descname">write</tt>(<em>content</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the specified content string to the file. Depending on the
+storage system behind the scenes, this content might not be fully
+committed until <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.close" title="django.core.files.File.close"><tt class="xref py py-func docutils literal"><span class="pre">close()</span></tt></a> is called on the file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.close">
+<tt class="descname">close</tt>()<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the file.</p>
+</dd></dl>
+
+<p>In addition to the listed methods, <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a> exposes
+the following attributes and methods of its <tt class="docutils literal"><span class="pre">file</span></tt> object:
+<tt class="docutils literal"><span class="pre">encoding</span></tt>, <tt class="docutils literal"><span class="pre">fileno</span></tt>, <tt class="docutils literal"><span class="pre">flush</span></tt>, <tt class="docutils literal"><span class="pre">isatty</span></tt>, <tt class="docutils literal"><span class="pre">newlines</span></tt>,
+<tt class="docutils literal"><span class="pre">read</span></tt>, <tt class="docutils literal"><span class="pre">readinto</span></tt>, <tt class="docutils literal"><span class="pre">readlines</span></tt>, <tt class="docutils literal"><span class="pre">seek</span></tt>, <tt class="docutils literal"><span class="pre">softspace</span></tt>, <tt class="docutils literal"><span class="pre">tell</span></tt>,
+<tt class="docutils literal"><span class="pre">truncate</span></tt>, <tt class="docutils literal"><span class="pre">writelines</span></tt>, <tt class="docutils literal"><span class="pre">xreadlines</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="s-the-contentfile-class">
+<span id="the-contentfile-class"></span><h2>The <tt class="docutils literal"><span class="pre">ContentFile</span></tt> Class<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#the-contentfile-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="django.core.files.base.ContentFile">
+<em class="property">class </em><tt class="descname">ContentFile</tt>(<em>File</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/base/#ContentFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.base.ContentFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <tt class="docutils literal"><span class="pre">ContentFile</span></tt> class inherits from <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a>,
+but unlike <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a> it operates on string content
+(bytes also supported), rather than an actual file. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">django.core.files.base</span> <span class="kn">import</span> <span class="n">ContentFile</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="n">ContentFile</span><span class="p">(</span><span class="s">"esta sentencia está en español"</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">ContentFile</span><span class="p">(</span><span class="n">b</span><span class="s">"these are bytes"</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="s-the-imagefile-class">
+<span id="the-imagefile-class"></span><h2>The <tt class="docutils literal"><span class="pre">ImageFile</span></tt> Class<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#the-imagefile-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="django.core.files.images.ImageFile">
+<em class="property">class </em><tt class="descname">ImageFile</tt>(<em>file_object</em>)<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/_modules/django/core/files/images/#ImageFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.images.ImageFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Django provides a built-in class specifically for images.
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.images.ImageFile" title="django.core.files.images.ImageFile"><tt class="xref py py-class docutils literal"><span class="pre">django.core.files.images.ImageFile</span></tt></a> inherits all the attributes
+and methods of <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a>, and additionally
+provides the following:</p>
+<dl class="attribute">
+<dt id="django.core.files.images.ImageFile.width">
+<tt class="descname">width</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.images.ImageFile.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Width of the image in pixels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.core.files.images.ImageFile.height">
+<tt class="descname">height</tt><a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.images.ImageFile.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Height of the image in pixels.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="s-additional-methods-on-files-attached-to-objects">
+<span id="additional-methods-on-files-attached-to-objects"></span><h2>Additional methods on files attached to objects<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#additional-methods-on-files-attached-to-objects" title="Permalink to this headline">¶</a></h2>
+<p>Any <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a> that is associated with an object (as with <tt class="docutils literal"><span class="pre">Car.photo</span></tt>,
+below) will also have a couple of extra methods:</p>
+<dl class="method">
+<dt id="django.core.files.File.save">
+<tt class="descclassname">File.</tt><tt class="descname">save</tt>(<em>name</em>, <em>content</em>, <em>save=True</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a new file with the file name and contents provided. This will not
+replace the existing file, but will create a new file and update the object
+to point to it. If <tt class="docutils literal"><span class="pre">save</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt>, the model’s <tt class="docutils literal"><span class="pre">save()</span></tt> method will
+be called once the file is saved. That is, these two lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">car</span><span class="o">.</span><span class="n">photo</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">'myphoto.jpg'</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">car</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>are equivalent to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">car</span><span class="o">.</span><span class="n">photo</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">'myphoto.jpg'</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the <tt class="docutils literal"><span class="pre">content</span></tt> argument must be an instance of either
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a> or of a subclass of <a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File" title="django.core.files.File"><tt class="xref py py-class docutils literal"><span class="pre">File</span></tt></a>, such as
+<a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.base.ContentFile" title="django.core.files.base.ContentFile"><tt class="xref py py-class docutils literal"><span class="pre">ContentFile</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.core.files.File.delete">
+<tt class="descclassname">File.</tt><tt class="descname">delete</tt>(<em>save=True</em>)<a class="headerlink" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#django.core.files.File.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the file from the model instance and deletes the underlying file.
+If <tt class="docutils literal"><span class="pre">save</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt>, the model’s <tt class="docutils literal"><span class="pre">save()</span></tt> method will be called once
+the file is deleted.</p>
+</dd></dl>
+
+</div>
+</div>
+
+</div>
+
+
+
+<div class="browse-horizontal">
+  
+  <div class="left"><a href="https://docs.djangoproject.com/en/1.8/ref/files/"><i class="icon icon-chevron-left"></i> File handling</a></div>
+  
+  
+  <div class="right"><a href="https://docs.djangoproject.com/en/1.8/ref/files/storage/">File storage API <i class="icon icon-chevron-right"></i></a></div>
+  
+</div>
+
+
+
+        <a href="https://docs.djangoproject.com/en/1.8/ref/files/file/#top" class="backtotop"><i class="icon icon-chevron-up"></i> Back to Top</a>
+      </div>
+
+      
+<h1 class="visuallyhidden">Additional Information</h1>
+<div role="complementary">
+  
+  
+
+<form action="https://docs.djangoproject.com/en/1.8/search/" class="search form-input" role="search">
+  <label class="visuallyhidden" for="news-search">Search:</label>
+    <input id="id_q" name="q" placeholder="Search 1.8 documentation" type="search">
+
+    <button type="submit">
+      <i class="icon icon-search"></i>
+      <span class="visuallyhidden">Search</span>
+    </button>
+</form>
+
+  
+
+  
+
+
+  <div class="fundraising-sidebar">
+    <h2>Support Django!</h2>
+
+    <div class="small-heart">
+      <img src="./The File object _ Django documentation _ Django_files/small-fundraising-heart.png" alt="Support Django!">
+    </div>
+
+    <div class="small-cta">
+      <ul class="list-links-small">
+        <li><a href="https://www.djangoproject.com/fundraising/">
+          Puneet Kaura donated
+          for the Django Fellowship program to support Django development.
+          Donate today!
+        </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  
+    <h2>Contents</h2>
+    
+    <ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#">The <tt class="docutils literal"><span class="pre">File</span></tt> object</a><ul>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#the-file-class">The <tt class="docutils literal"><span class="pre">File</span></tt> Class</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#the-contentfile-class">The <tt class="docutils literal"><span class="pre">ContentFile</span></tt> Class</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#the-imagefile-class">The <tt class="docutils literal"><span class="pre">ImageFile</span></tt> Class</a></li>
+<li><a class="reference internal" href="https://docs.djangoproject.com/en/1.8/ref/files/file/#additional-methods-on-files-attached-to-objects">Additional methods on files attached to objects</a></li>
+</ul>
+</li>
+</ul>
+
+    
+  
+
+  
+  <h2>Browse</h2>
+  <ul>
+    
+    
+    <li>Prev: <a href="https://docs.djangoproject.com/en/1.8/ref/files/">File handling</a></li>
+    
+    
+    <li>Next: <a href="https://docs.djangoproject.com/en/1.8/ref/files/storage/">File storage API</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/contents/">Table of contents</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/genindex/">General Index</a></li>
+    
+    <li><a href="https://docs.djangoproject.com/en/1.8/py-modindex/">Python Module Index</a></li>
+    
+    
+  </ul>
+  
+
+  
+  <h2>You are here:</h2>
+  <ul>
+    <li>
+      <a href="https://docs.djangoproject.com/en/1.8/">Django 1.8 documentation</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/">API Reference</a>
+      
+      <ul><li><a href="https://docs.djangoproject.com/en/1.8/ref/files/">File handling</a>
+      
+      <ul><li>The <tt class="docutils literal"><span class="pre">File</span></tt> object</li></ul>
+      </li></ul></li></ul>
+    </li>
+  </ul>
+  
+
+  
+  <h2 id="getting-help-sidebar">Getting help</h2>
+  <dl class="list-links">
+    <dt><a href="https://docs.djangoproject.com/en/1.8/faq/">FAQ</a></dt>
+    <dd>Try the FAQ — it's got answers to many common questions.</dd>
+
+    <dt><a href="https://docs.djangoproject.com/en/stable/genindex/">Index</a>, <a href="https://docs.djangoproject.com/en/stable/py-modindex/">Module Index</a>, or <a href="https://docs.djangoproject.com/en/stable/contents/">Table of Contents</a></dt>
+    <dd>Handy when looking for specific information.</dd>
+
+    <dt><a href="http://groups.google.com/group/django-users/">django-users mailing list</a></dt>
+    <dd>Search for information in the archives of the django-users mailing list, or post a question.</dd>
+
+    <dt><a href="irc://irc.freenode.net/django">#django IRC channel</a></dt>
+    <dd>Ask a question in the #django IRC channel, or search the IRC logs to see if it’s been asked before.</dd>
+
+    <dt><a href="http://code.djangoproject.com/">Ticket tracker</a></dt>
+    <dd>Report bugs with Django or Django documentation in our ticket tracker.</dd>
+  </dl>
+  
+
+  
+  <h2>Download:</h2>
+  <p>
+    Offline (Django 1.8):
+    <a href="https://docs.djangoproject.com/m/docs/django-docs-1.8-en.zip">HTML</a> |
+    <a href="http://media.readthedocs.org/pdf/django/1.8.x/django.pdf">PDF</a> |
+    <a href="http://media.readthedocs.org/epub/django/1.8.x/django.epub">ePub</a>
+    <br>
+    <span class="quiet">
+      Provided by <a href="http://readthedocs.org/">Read the Docs</a>.
+    </span>
+  </p>
+  
+</div>
+
+      
+
+    </div>
+
+     
+     
+
+    
+    
+    
+
+    
+      
+<div role="contentinfo">
+  <div class="subfooter">
+    <div class="container">
+      <h1 class="visuallyhidden">Django Links</h1>
+
+      <div class="col learn">
+        <h2>Learn More</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/start/overview/">About Django</a></li>
+          
+          <li><a href="https://www.djangoproject.com/start/">Getting Started with Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/organization/">Team Organization</a></li>
+          <li><a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+          <li><a href="https://www.djangoproject.com/conduct/">Code of Conduct</a></li>
+          <li><a href="https://www.djangoproject.com/diversity/">Diversity statement</a></li>
+        </ul>
+      </div>
+
+      <div class="col involved">
+        <h2>Get Involved</h2>
+        <ul>
+          <li><a href="https://www.djangoproject.com/community/">Join a Group</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/">Contribute to Django</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/contributing/bugs-and-features/">Submit a Bug</a></li>
+          <li><a href="https://docs.djangoproject.com/en/dev/internals/security/#reporting-security-issues">Report a Security Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="col follow last-child">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="https://github.com/django">GitHub</a></li>
+          <li><a href="https://twitter.com/djangoproject">Twitter</a></li>
+          <li><a href="https://www.djangoproject.com/rss/weblog/">News RSS</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/django-users">Django Users Mailing List</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a class="logo" href="https://www.djangoproject.com/">Django</a>
+      </div>
+      <ul class="thanks">
+        <li>
+          <span>Hosting by</span> <a class="rackspace" href="http://rackspace.com/">Rackspace</a>
+          <span>Search by</span> <a class="elastic" href="https://www.elastic.co/">Elastic Search</a>
+        </li>
+        <li class="design"><span>Design by</span> <a class="threespot" href="http://www.threespot.com/">Threespot</a> <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+      </ul>
+      <p class="copyright">© 2005-2015
+        <a href="https://www.djangoproject.com/foundation/"> Django Software
+        Foundation</a> and individual contributors. Django is a
+        <a href="https://www.djangoproject.com/trademarks/">registered
+        trademark</a> of the Django Software Foundation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    
+
+    
+    <script>
+    function extless(input) {
+        return input.replace(/(.*)\.[^.]+$/, '$1');
+    }
+    var require = {
+        shim: {
+            'jquery': [],
+            'jquery.inview': ["jquery"],
+            'jquery.payment': ["jquery"],
+            'jquery.flot': ["jquery"],
+            'jquery.unveil': ["jquery"],
+            'stripe': {
+              exports: 'Stripe'
+            }
+        },
+        paths: {
+            "jquery": extless("/s/js/lib/jquery/dist/jquery.min.87e69028f78d.js"),
+            "jquery.inview": extless("/s/js/lib/jquery.inview/jquery.inview.min.4edba1c65592.js"),
+            "jquery.payment": extless("/s/js/lib/jquery.payment/lib/jquery.payment.e99c05ca79ae.js"),
+            "jquery.unveil": extless("/s/js/lib/unveil/jquery.unveil.min.ac79eb277093.js"),
+            "jquery.flot": extless("/s/js/lib/jquery-flot/jquery.flot.min.9964206e9d7f.js"),
+            "mod/floating-warning": extless("/s/js/mod/floating-warning.be4c593edefa.js"),
+            "mod/list-collapsing": extless("/s/js/mod/list-collapsing.fcb0fadc7005.js"),
+            "mod/list-feature": extless("/s/js/mod/list-feature.2794dc3d3a94.js"),
+            "mod/mobile-menu": extless("/s/js/mod/mobile-menu.6403495515c4.js"),
+            "mod/version-switcher": extless("/s/js/mod/version-switcher.53940d7aff91.js"),
+            "mod/search-key": extless("/s/js/mod/search-key.ed6a6a216ce6.js"),
+            "mod/stripe-custom-checkout": extless("/s/js/mod/stripe-custom-checkout.2b2f1698da6d.js"),
+            "mod/stripe-change-card": extless("/s/js/mod/stripe-change-card.c9e3d05f7a91.js"),
+            "stripe-checkout": "https://checkout.stripe.com/checkout",
+            "stripe": "https://js.stripe.com/v2/?"  // ? needed due to require.js
+        }
+    };
+    </script>
+    <script data-main="/s/js/main.5702773eb28f.js" src="./The File object _ Django documentation _ Django_files/require.177879fbe7dd.js"></script>
+    
+
+
+
+  
+
+</body></html>
