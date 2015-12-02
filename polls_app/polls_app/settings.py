@@ -82,17 +82,24 @@ WSGI_APPLICATION = 'polls_app.wsgi.application'
 currentPath = os.path.dirname(os.path.abspath(__file__))
 db_cred_filename = 'sql-lite.dbcreds'  # database credentials file
 
-# Parse DB credentials from text file
-db_file_reader = open(currentPath + '\\' + db_cred_filename, 'r')
-lineList = []
-for line in db_file_reader:
-    lineList.append(line)
-db_file_reader.close()
-dbStr = ''.join(lineList)
-databaseConnectionDict = literal_eval(dbStr)
+# # Parse DB credentials from text file
+# db_file_reader = open(currentPath + '\\' + db_cred_filename, 'r')
+# lineList = []
+# for line in db_file_reader:
+#     lineList.append(line)
+# db_file_reader.close()
+# dbStr = ''.join(lineList)
+# databaseConnectionDict = literal_eval(dbStr)
 
-# database connection
-DATABASES = databaseConnectionDict
+# # database connection
+# DATABASES = databaseConnectionDict
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
