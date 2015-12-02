@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from ast import literal_eval  # Converts string to dict
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -74,13 +75,20 @@ WSGI_APPLICATION = 'polls_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# Database Information
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+currentPath = os.path.dirname(os.path.abspath(__file__))
+db_cred_filename = 'sql-lite.dbcreds'
+db_file_reader = open(currentPath + '\\' + db_cred_filename, 'r')
+lineList = []
+for line in db_file_reader:
+    lineList.append(line)
+db_file_reader.close()
+dbStr = ''.join(lineList)
+databaseConnectionDict = literal_eval(dbStr)
 
+# database connection
+DATABASES = databaseConnectionDict
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
