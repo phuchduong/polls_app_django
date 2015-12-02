@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'polls_app.wsgi.application'
 
 # Database Information
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+
+# Current location for settings.py
 currentPath = os.path.dirname(os.path.abspath(__file__))
-db_cred_filename = 'sql-lite.dbcreds'
+db_cred_filename = 'sql-lite.dbcreds'  # database credentials file
+
+# Parse DB credentials from text file
 db_file_reader = open(currentPath + '\\' + db_cred_filename, 'r')
 lineList = []
 for line in db_file_reader:
